@@ -13,9 +13,9 @@
   --pattern: rgb(24 24 27 / 8%);
   --shadow: rgb(24 24 27 / 8%);
   --pullcord-top: 0px;
-  --pullcord-right: max(24px, calc(50vw - 470px));
+  --pullcord-right: 7rem;
   --pullcord-z: 60;
-  --pullcord-ink: rgb(24 24 27 / 28%);
+  --pullcord-ink: var(--muted);
 }
 
 .dark {
@@ -30,7 +30,6 @@
   --accent-soft: #172554;
   --pattern: rgb(250 250 250 / 7%);
   --shadow: rgb(0 0 0 / 55%);
-  --pullcord-ink: rgb(250 250 250 / 28%);
 }
 
 * {
@@ -1259,15 +1258,40 @@ input:focus-visible {
 
 .desktop-pull-cord .cord-hint {
   position: fixed;
-  top: 112px;
-  right: max(78px, calc(50vw - 416px));
-  z-index: 59;
+  top: calc(var(--pullcord-top, 0px) + 172px);
+  right: calc(var(--pullcord-right, 7rem) + 52px);
+  z-index: calc(var(--pullcord-z, 5) - 1);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
   color: var(--muted);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
-  line-height: 1.25;
+  white-space: nowrap;
   pointer-events: none;
-  transform: rotate(-8deg);
+  animation: cord-hint-in 0.5s 1.8s ease both;
+}
+
+.cord-hint-text {
+  font-family: "Caveat", "Segoe Script", "Bradley Hand", cursive;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 0.95;
+  text-align: right;
+}
+
+.cord-hint-arrow {
+  flex: none;
+  transform: rotate(16deg);
+  transform-origin: center;
+}
+
+@keyframes cord-hint-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 html[data-custom-cursor="true"],
@@ -1368,8 +1392,16 @@ html[data-custom-cursor="true"] * {
   .overview-item:first-child {
     border-top: 0;
   }
+}
 
-  .desktop-pull-cord {
+@media (max-width: 760px) {
+  .desktop-pull-cord .cord-hint {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .desktop-pull-cord .pullcord {
     display: none;
   }
 }

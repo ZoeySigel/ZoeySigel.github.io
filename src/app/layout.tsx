@@ -1,4 +1,5 @@
 import "@fontsource-variable/noto-sans-sc";
+import "@fontsource/caveat/600.css";
 import "pullcord/pullcord.css";
 import "@/styles/globals.css";
 
