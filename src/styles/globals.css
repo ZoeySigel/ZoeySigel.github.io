@@ -93,7 +93,12 @@ input:focus-visible {
 
 ::selection {
   color: #fff;
-  background: #2563eb;
+  background: #000;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #000;
 }
 
 .frame,
