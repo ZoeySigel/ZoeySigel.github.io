@@ -50,8 +50,8 @@ body {
   background:
     linear-gradient(var(--edge) 1px, transparent 1px) 0 7px / 100% 256px,
     var(--background);
-  font-family: var(--font-geist-sans), "Noto Sans SC Variable", system-ui,
-    sans-serif;
+  font-family:
+    var(--font-geist-sans), "Noto Sans SC Variable", system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
@@ -522,7 +522,9 @@ input:focus-visible {
   border: 1px solid var(--edge-strong);
   border-radius: 50%;
   background: var(--surface-2);
-  box-shadow: 0 0 0 3px var(--background), 0 0 0 4px var(--edge);
+  box-shadow:
+    0 0 0 3px var(--background),
+    0 0 0 4px var(--edge);
 }
 
 .avatar-cell > span {
@@ -1263,28 +1265,27 @@ input:focus-visible {
   transform: rotate(-8deg);
 }
 
+html[data-custom-cursor="true"],
+html[data-custom-cursor="true"] * {
+  cursor: none !important;
+}
+
 .smooth-cursor {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 120;
-  width: 10px;
-  height: 10px;
-  border: 1px solid var(--foreground);
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--background) 45%, transparent);
   pointer-events: none;
-  mix-blend-mode: difference;
-  transition:
-    width 160ms ease,
-    height 160ms ease,
-    margin 160ms ease;
+  transform-origin: 50% 50%;
+  translate: -50% -50%;
+  will-change: left, top, transform;
 }
 
-.smooth-cursor[data-active="true"] {
-  width: 24px;
-  height: 24px;
-  margin: -7px;
+.smooth-cursor svg {
+  display: block;
+  width: 50px;
+  height: 54px;
+  transform: scale(0.5);
 }
 
 .scroll-top {
