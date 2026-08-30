@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 440" role="img" aria-labelledby="title desc">
+  <title id="title">头像占位图</title>
+  <desc id="desc">带有 ZS 字母和网格的头像占位图，请在发布前替换。</desc>
+  <rect width="440" height="440" fill="#DCE4F0"/>
+  <g stroke="#315BD6" stroke-opacity=".14">
+    <path d="M0 55h440M0 110h440M0 165h440M0 220h440M0 275h440M0 330h440M0 385h440"/>
+    <path d="M55 0v440M110 0v440M165 0v440M220 0v440M275 0v440M330 0v440M385 0v440"/>
+  </g>
+  <path d="M86 112h268v56L190 328h164v56H86v-56l164-160H86z" fill="#315BD6"/>
+  <circle cx="344" cy="96" r="28" fill="#EB705E"/>
+</svg>
