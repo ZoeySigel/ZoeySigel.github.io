@@ -1,14 +1,11 @@
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Github,
-  Mail,
-  MapPin,
-  Radio,
-} from "lucide-react";
+import { ArrowUpRight, Github, Mail, MapPin, Radio } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { CollapsibleProfileItem } from "@/components/collapsible-profile-item";
+import { FlipSentences } from "@/components/flip-sentences";
+import { ProfileCover } from "@/components/profile-cover";
+import { ZSMark } from "@/components/zs-mark";
 import {
   EXPERIENCES,
   PROJECTS,
@@ -18,12 +15,16 @@ import {
 } from "@/content/profile";
 import { formatPostDate, getAllPosts } from "@/lib/posts";
 
+function Separator() {
+  return <div className="stripe-separator" aria-hidden="true" />;
+}
+
 function SectionHeading({ label, title }: { label: string; title: string }) {
   return (
-    <div className="section-heading">
+    <header className="panel-heading">
       <p>{label}</p>
       <h2>{title}</h2>
-    </div>
+    </header>
   );
 }
 
@@ -31,124 +32,134 @@ export default function HomePage() {
   const latestPosts = getAllPosts().slice(0, 2);
 
   return (
-    <main id="main-content">
-      <section className="hero shell" aria-labelledby="hero-title">
-        <div className="hero-copy">
-          <div className="status-line">
-            <Radio aria-hidden="true" />
-            <span>{USER.availability}</span>
-          </div>
-          <p className="hero-kicker">{USER.role}</p>
-          <h1 id="hero-title">
-            把想法写进
-            <span>可维护的系统。</span>
-          </h1>
-          <p className="hero-summary">{USER.bio}</p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="#work">
-              查看项目 <ArrowDownRight aria-hidden="true" />
-            </a>
-            <a
-              className="button button-secondary"
-              href={USER.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub <ArrowUpRight aria-hidden="true" />
-            </a>
-          </div>
-        </div>
-        <div className="identity-card">
-          <div className="avatar-frame">
+    <main className="profile-main" id="main-content">
+      <div className="frame profile-frame">
+        <ProfileCover />
+
+        <section className="identity-panel" aria-labelledby="identity-title">
+          <div className="avatar-cell">
             <Image
               src="/avatar-placeholder.svg"
               alt="ZoeySigel 的头像占位图，发布前请替换"
-              width={220}
-              height={220}
+              width={160}
+              height={160}
               priority
             />
-            <span>PLACEHOLDER</span>
+            <span>ZS</span>
           </div>
-          <div className="identity-meta">
-            <div>
-              <strong>{USER.name}</strong>
-              <span>{USER.handle}</span>
+          <div className="identity-copy">
+            <div className="identity-blueprint" aria-hidden="true">
+              text-3xl / font-semibold / tracking-tight
             </div>
-            <p>
-              <MapPin aria-hidden="true" /> {USER.location}
-            </p>
+            <div className="identity-name-row">
+              <div>
+                <h1 id="identity-title">{USER.name}</h1>
+                <p>{USER.handle}</p>
+              </div>
+              <span className="verified-mark" title="主页资料占位状态">
+                ✓
+              </span>
+            </div>
+            <FlipSentences sentences={USER.flipSentences} />
           </div>
-        </div>
-      </section>
+        </section>
 
-      <div className="shell commit-stream">
-        <section className="stream-entry" aria-labelledby="about-title">
+        <Separator />
+
+        <section className="overview-panel" aria-label="个人概览">
+          <div className="overview-item overview-wide">
+            <Radio aria-hidden="true" />
+            <span>
+              <small>STATUS</small>
+              {USER.availability}
+            </span>
+          </div>
+          <div className="overview-item">
+            <MapPin aria-hidden="true" />
+            <span>
+              <small>LOCATION</small>
+              {USER.location}
+            </span>
+          </div>
+          <div className="overview-item">
+            <Github aria-hidden="true" />
+            <span>
+              <small>GITHUB</small>
+              {USER.handle}
+            </span>
+          </div>
+        </section>
+
+        <Separator />
+
+        <section className="content-panel" aria-labelledby="about-title">
           <SectionHeading label="PROFILE NOTE" title="关于我" />
-          <div className="about-copy" id="about-title">
+          <div className="prose-block" id="about-title">
+            <p className="lead-copy">{USER.bio}</p>
             {USER.about.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
         </section>
 
+        <Separator />
+
         <section
-          className="stream-entry"
+          className="content-panel"
           id="work"
           aria-labelledby="work-title"
         >
           <SectionHeading label="SELECTED WORK" title="精选项目" />
-          <div className="project-grid" id="work-title">
+          <div className="collapsible-list" id="work-title">
             {PROJECTS.map((project) => (
-              <a
-                className="project-card"
-                href={project.href}
+              <CollapsibleProfileItem
                 key={project.title}
-              >
-                <div className="card-topline">
-                  <span>{project.period}</span>
-                  <ArrowUpRight aria-hidden="true" />
-                </div>
-                <h3>{project.title}</h3>
-                <p>{project.summary}</p>
-                <ul aria-label="项目技术">
-                  {project.stack.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                {project.placeholder ? (
-                  <span className="placeholder-label">待替换</span>
-                ) : null}
-              </a>
+                icon={project.icon}
+                title={project.title}
+                period={project.period}
+                description={project.summary}
+                tags={project.stack}
+                href={project.href}
+                defaultOpen={project.defaultOpen}
+                placeholder={project.placeholder}
+              />
             ))}
           </div>
         </section>
 
+        <Separator />
+
         <section
-          className="stream-entry"
+          className="content-panel"
           id="experience"
           aria-labelledby="experience-title"
         >
           <SectionHeading label="CHANGELOG" title="经历与教育" />
-          <div className="timeline" id="experience-title">
+          <div className="collapsible-list" id="experience-title">
             {EXPERIENCES.map((experience) => (
-              <article className="timeline-item" key={experience.organization}>
-                <p className="timeline-period">{experience.period}</p>
-                <div>
-                  <h3>{experience.organization}</h3>
-                  <p className="timeline-role">{experience.role}</p>
-                  <p>{experience.summary}</p>
-                </div>
-                {experience.placeholder ? (
-                  <span className="placeholder-label">待替换</span>
-                ) : null}
-              </article>
+              <CollapsibleProfileItem
+                key={experience.organization}
+                icon={experience.icon}
+                title={experience.organization}
+                subtitle={experience.role}
+                period={experience.period}
+                description={experience.summary}
+                defaultOpen={experience.defaultOpen}
+                placeholder={experience.placeholder}
+              />
             ))}
           </div>
         </section>
 
-        <section className="stream-entry" aria-labelledby="stack-title">
+        <Separator />
+
+        <section
+          className="content-panel"
+          id="stack"
+          aria-labelledby="stack-title"
+        >
           <SectionHeading label="TOOLBOX" title="技术栈" />
-          <div className="stack-grid" id="stack-title">
+          <div className="stack-table" id="stack-title">
             {TECH_STACK.map((group) => (
               <article key={group.label}>
                 <h3>{group.label}</h3>
@@ -162,66 +173,65 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="stream-entry" aria-labelledby="writing-title">
+        <Separator />
+
+        <section className="content-panel" aria-labelledby="writing-title">
           <SectionHeading label="WRITING LOG" title="最新文章" />
-          <div className="post-list" id="writing-title">
+          <div className="article-list" id="writing-title">
             {latestPosts.map((post) => (
-              <Link
-                className="post-row"
-                href={`/blog/${post.slug}/`}
-                key={post.slug}
-              >
-                <div>
-                  <time dateTime={post.metadata.publishedAt}>
-                    {formatPostDate(post.metadata.publishedAt)}
-                  </time>
-                  <h3>{post.metadata.title}</h3>
-                  <p>{post.metadata.description}</p>
-                </div>
+              <Link href={`/blog/${post.slug}/`} key={post.slug}>
+                <time dateTime={post.metadata.publishedAt}>
+                  {formatPostDate(post.metadata.publishedAt)}
+                </time>
+                <span>
+                  <strong>{post.metadata.title}</strong>
+                  <small>{post.metadata.description}</small>
+                </span>
                 <ArrowUpRight aria-hidden="true" />
               </Link>
             ))}
           </div>
-          <Link className="text-link" href="/blog/">
+          <Link className="panel-link" href="/blog/">
             查看全部文章 <ArrowUpRight aria-hidden="true" />
           </Link>
         </section>
 
+        <Separator />
+
         <section
-          className="stream-entry contact-section"
+          className="content-panel contact-panel"
           id="contact"
           aria-labelledby="contact-title"
         >
           <SectionHeading label="OPEN CHANNEL" title="联系我" />
-          <div className="contact-panel" id="contact-title">
+          <div className="contact-intro" id="contact-title">
+            <ZSMark />
             <div>
               <h3>从一个具体问题开始。</h3>
-              <p>
-                请在发布前换成你的真实联系偏好，例如工作机会、开源协作或技术交流。
-              </p>
+              <p>工作机会、开源协作或技术交流，都可以从下面的渠道联系。</p>
             </div>
-            <ul>
-              {SOCIAL_LINKS.map((link) => {
-                const Icon = link.icon === "github" ? Github : Mail;
-                return (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      target={link.icon === "github" ? "_blank" : undefined}
-                      rel={link.icon === "github" ? "noreferrer" : undefined}
-                    >
-                      <Icon aria-hidden="true" />
-                      <span>
-                        <small>{link.label}</small>
-                        {link.value}
-                      </span>
-                      <ArrowUpRight aria-hidden="true" />
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
           </div>
+          <ul className="social-grid">
+            {SOCIAL_LINKS.map((link) => {
+              const Icon = link.icon === "github" ? Github : Mail;
+              return (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target={link.icon === "github" ? "_blank" : undefined}
+                    rel={link.icon === "github" ? "noreferrer" : undefined}
+                  >
+                    <Icon aria-hidden="true" />
+                    <span>
+                      <small>{link.label}</small>
+                      {link.value}
+                    </span>
+                    <ArrowUpRight aria-hidden="true" />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </section>
       </div>
     </main>

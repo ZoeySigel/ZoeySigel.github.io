@@ -1,6 +1,6 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
+import { Moon, SunMedium } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export function ThemeToggle() {
@@ -13,7 +13,7 @@ export function ThemeToggle() {
       aria-label="切换亮暗主题"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
-      <Sun className="theme-icon-sun" aria-hidden="true" />
+      <SunMedium className="theme-icon-sun" aria-hidden="true" />
       <Moon className="theme-icon-moon" aria-hidden="true" />
     </button>
   );

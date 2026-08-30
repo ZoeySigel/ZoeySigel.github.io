@@ -4,6 +4,8 @@ export type Project = {
   href: string;
   period: string;
   stack: string[];
+  defaultOpen?: boolean;
+  icon?: string;
   placeholder?: boolean;
 };
 
@@ -12,6 +14,8 @@ export type Experience = {
   role: string;
   period: string;
   summary: string;
+  defaultOpen?: boolean;
+  icon?: string;
   placeholder?: boolean;
 };
 
@@ -29,6 +33,11 @@ export const USER = {
   role: "软件开发者 · 方向待补充",
   location: "所在城市 · 待补充",
   availability: "正在整理个人项目与经历",
+  flipSentences: [
+    "把复杂问题拆成清晰、可维护的系统。",
+    "关注产品体验，也关心交付质量。",
+    "正在寻找值得长期投入的技术问题。",
+  ],
   bio: "这里将用两三句话说明你的技术方向、解决过的问题，以及希望与什么样的团队合作。当前内容为安全占位文案。",
   about: [
     "用一段简短、具体的介绍替换这里：你关注的技术领域、工作方式，以及你能为团队带来的价值。",
@@ -46,6 +55,8 @@ export const PROJECTS: Project[] = [
     href: "#contact",
     period: "项目年份 · 待补充",
     stack: ["TypeScript", "Next.js", "数据层待补充"],
+    defaultOpen: true,
+    icon: "01",
     placeholder: true,
   },
   {
@@ -55,6 +66,7 @@ export const PROJECTS: Project[] = [
     href: "#contact",
     period: "项目年份 · 待补充",
     stack: ["React", "Node.js", "部署方案待补充"],
+    icon: "02",
     placeholder: true,
   },
   {
@@ -64,6 +76,7 @@ export const PROJECTS: Project[] = [
     href: "#contact",
     period: "项目年份 · 待补充",
     stack: ["性能优化", "工程化", "可观测性"],
+    icon: "03",
     placeholder: true,
   },
 ];
@@ -75,6 +88,8 @@ export const EXPERIENCES: Experience[] = [
     period: "20XX — 至今",
     summary:
       "描述职责范围、协作对象和一项最有代表性的成果。不要公开未获许可的内部信息。",
+    defaultOpen: true,
+    icon: "NOW",
     placeholder: true,
   },
   {
@@ -82,6 +97,7 @@ export const EXPERIENCES: Experience[] = [
     role: "身份或方向 · 待补充",
     period: "20XX — 20XX",
     summary: "补充与你当前方向有关的学习、研究、开源贡献或工作经历。",
+    icon: "PREV",
     placeholder: true,
   },
 ];

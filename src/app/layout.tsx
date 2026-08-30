@@ -1,13 +1,16 @@
-import "@fontsource-variable/bricolage-grotesque";
-import "@fontsource/ibm-plex-mono/400.css";
-import "@fontsource/ibm-plex-mono/600.css";
 import "@fontsource-variable/noto-sans-sc";
+import "pullcord/pullcord.css";
 import "@/styles/globals.css";
 
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 import type { Metadata, Viewport } from "next";
 
+import { PullCordTheme } from "@/components/pull-cord-theme";
+import { ScrollTop } from "@/components/scroll-top";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SmoothCursor } from "@/components/smooth-cursor";
 import { ThemeProvider } from "@/components/theme-provider";
 import { USER } from "@/content/profile";
 
@@ -47,8 +50,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F5F7FB" },
-    { media: "(prefers-color-scheme: dark)", color: "#0D1422" },
+    { media: "(prefers-color-scheme: light)", color: "#FAFAFA" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090B" },
   ],
 };
 
@@ -59,7 +62,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body>
+      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
         <ThemeProvider>
           <a className="skip-link" href="#main-content">
             跳到主要内容
@@ -67,6 +70,9 @@ export default function RootLayout({
           <SiteHeader />
           {children}
           <SiteFooter />
+          <PullCordTheme />
+          <SmoothCursor />
+          <ScrollTop />
         </ThemeProvider>
       </body>
     </html>
