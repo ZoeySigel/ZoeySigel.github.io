@@ -434,9 +434,19 @@ input:focus-visible {
   place-items: center;
 }
 
-.mark-resize-stage > svg {
+.pixel-welcome-mark {
+  display: flex;
   width: 100%;
   height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Pixelify Sans Variable", var(--font-geist-mono), monospace;
+  font-size: clamp(18px, 4.2vw, 42px);
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .resize-frame {

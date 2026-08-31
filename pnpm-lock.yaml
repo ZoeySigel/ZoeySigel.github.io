@@ -11,6 +11,9 @@ importers:
       '@fontsource-variable/noto-sans-sc':
         specifier: ^5.2.8
         version: 5.3.0
+      '@fontsource-variable/pixelify-sans':
+        specifier: 5.3.0
+        version: 5.3.0
       '@fontsource/caveat':
         specifier: ^5.3.0
         version: 5.3.0
@@ -219,6 +222,9 @@ packages:
 
   '@fontsource-variable/noto-sans-sc@5.3.0':
     resolution: {integrity: sha512-lNar1dF7Ik/lHNPo/7JWG0TolXY29LtsqYgMvEysooZ5bsO9uH4shJmRrwyJ3PjyTPljhpMJEK0jDuLSU4vJ1w==}
+
+  '@fontsource-variable/pixelify-sans@5.3.0':
+    resolution: {integrity: sha512-rOF07QCyHg9xb4UZF3lpXOM4UO+zo3y8tXvO7T+vy40GVt/GU8HL+/YWE029CMsbhOwk4plRDY9G8BU5cWs1ig==}
 
   '@fontsource/caveat@5.3.0':
     resolution: {integrity: sha512-eHTfzQxFSW9ABERRLNruHoNJmKed2J7pqTUc5lp4a4POMgXGKpxmWj3d9Hz10kmAg6iuTTLe6UagbA4bnsmfQw==}
@@ -2951,6 +2957,8 @@ snapshots:
       levn: 0.4.1
 
   '@fontsource-variable/noto-sans-sc@5.3.0': {}
+
+  '@fontsource-variable/pixelify-sans@5.3.0': {}
 
   '@fontsource/caveat@5.3.0': {}
 
