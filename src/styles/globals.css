@@ -207,42 +207,18 @@ input:focus-visible {
 }
 
 .header-github {
-  padding-left: 14px;
-  border-left: 1px solid var(--edge);
-  font-size: 12px;
-}
-
-.icon-button {
-  position: relative;
+  display: grid;
   width: 32px;
   height: 32px;
+  flex: 0 0 auto;
   padding: 0;
-  border: 0;
   background: transparent;
-  cursor: pointer;
+  place-items: center;
 }
 
-.icon-button svg {
-  position: absolute;
-  top: 7px;
-  left: 7px;
+.header-github svg {
   width: 18px;
   height: 18px;
-  transition:
-    opacity 240ms ease,
-    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.theme-icon-moon,
-.dark .theme-icon-sun {
-  opacity: 0;
-  transform: rotate(-65deg) scale(0.65);
-}
-
-.dark .theme-icon-moon,
-.theme-icon-sun {
-  opacity: 1;
-  transform: rotate(0) scale(1);
 }
 
 .command-button {
@@ -1401,7 +1377,6 @@ html[data-custom-cursor="true"] * {
     width: calc(100% - 16px);
   }
 
-  .header-github,
   .command-button span,
   .command-button kbd {
     display: none;

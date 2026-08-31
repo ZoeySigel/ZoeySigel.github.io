@@ -1,8 +1,8 @@
+import { Github } from "lucide-react";
 import Link from "next/link";
 
 import { CommandMenu } from "@/components/command-menu";
 import { SiteHeaderWrapper } from "@/components/site-header-wrapper";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { ZSMark } from "@/components/zs-mark";
 import { getAllPosts } from "@/lib/posts";
 
@@ -37,10 +37,11 @@ export function SiteHeader() {
           href="https://github.com/ZoeySigel"
           target="_blank"
           rel="noreferrer"
+          aria-label="打开 ZoeySigel 的 GitHub 主页"
+          title="GitHub"
         >
-          GitHub
+          <Github aria-hidden="true" />
         </a>
-        <ThemeToggle />
       </div>
     </SiteHeaderWrapper>
   );
