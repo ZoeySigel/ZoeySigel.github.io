@@ -93,9 +93,8 @@ export function PixelWelcomeMark(props: SVGProps<SVGSVGElement>) {
       shapeRendering="crispEdges"
       {...props}
     >
-      <rect width="100%" height="100%" fill="#000" />
-      <path d={FIRST_LINE} fill="#fff" />
-      <path d={SECOND_LINE} fill="#fff" />
+      <path d={FIRST_LINE} fill="currentColor" />
+      <path d={SECOND_LINE} fill="currentColor" />
     </svg>
   );
 }
