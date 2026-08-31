@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { CommandMenu } from "@/components/command-menu";
 import { SiteHeaderWrapper } from "@/components/site-header-wrapper";
+import { SiteNav } from "@/components/site-nav";
 import { ZSMark } from "@/components/zs-mark";
 import { getAllPosts } from "@/lib/posts";
 
@@ -27,10 +28,7 @@ export function SiteHeader() {
         <Link className="wordmark" href="/" aria-label="ZoeySigel 首页">
           <ZSMark />
         </Link>
-        <nav className="main-nav" aria-label="主导航">
-          <Link href="/">主页</Link>
-          <Link href="/blog/">博客</Link>
-        </nav>
+        <SiteNav />
         <CommandMenu items={commandItems} />
         <a
           className="header-github"

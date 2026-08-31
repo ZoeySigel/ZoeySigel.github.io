@@ -199,7 +199,7 @@ input:focus-visible {
 
 .main-nav {
   display: flex;
-  gap: 18px;
+  gap: 2px;
   margin-left: auto;
   font-family: var(--font-geist-mono), monospace;
   font-size: 13px;
@@ -208,12 +208,30 @@ input:focus-visible {
 .main-nav a,
 .header-github {
   color: var(--muted);
-  transition: color 160ms ease;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.main-nav a {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  padding: 0 10px;
 }
 
 .main-nav a:hover,
 .header-github:hover {
   color: var(--foreground);
+}
+
+.main-nav a:hover {
+  background: var(--soft);
+}
+
+.main-nav a[data-active="true"] {
+  color: var(--background);
+  background: var(--foreground);
 }
 
 .header-github {
