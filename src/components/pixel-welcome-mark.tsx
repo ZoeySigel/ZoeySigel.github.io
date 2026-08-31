@@ -1,0 +1,84 @@
+import type { SVGProps } from "react";
+
+const GLYPHS: Record<string, readonly string[]> = {
+  "!": ["00100", "00100", "00100", "00100", "00100", "00000", "00100"],
+  ".": ["00000", "00000", "00000", "00000", "00000", "00000", "00100"],
+  "3": ["11110", "00001", "00001", "01110", "00001", "00001", "11110"],
+  "<": ["00010", "00100", "01000", "10000", "01000", "00100", "00010"],
+  A: ["01110", "10001", "10001", "11111", "10001", "10001", "10001"],
+  B: ["11110", "10001", "10001", "11110", "10001", "10001", "11110"],
+  C: ["01111", "10000", "10000", "10000", "10000", "10000", "01111"],
+  D: ["11110", "10001", "10001", "10001", "10001", "10001", "11110"],
+  E: ["11111", "10000", "10000", "11110", "10000", "10000", "11111"],
+  G: ["01111", "10000", "10000", "10111", "10001", "10001", "01111"],
+  H: ["10001", "10001", "10001", "11111", "10001", "10001", "10001"],
+  I: ["11111", "00100", "00100", "00100", "00100", "00100", "11111"],
+  L: ["10000", "10000", "10000", "10000", "10000", "10000", "11111"],
+  M: ["10001", "11011", "10101", "10101", "10001", "10001", "10001"],
+  N: ["10001", "11001", "10101", "10011", "10001", "10001", "10001"],
+  O: ["01110", "10001", "10001", "10001", "10001", "10001", "01110"],
+  P: ["11110", "10001", "10001", "11110", "10000", "10000", "10000"],
+  S: ["01111", "10000", "10000", "01110", "00001", "00001", "11110"],
+  T: ["11111", "00100", "00100", "00100", "00100", "00100", "00100"],
+  U: ["10001", "10001", "10001", "10001", "10001", "10001", "01110"],
+  W: ["10001", "10001", "10001", "10101", "10101", "11011", "10001"],
+  Y: ["10001", "10001", "01010", "00100", "00100", "00100", "00100"],
+};
+
+const PIXEL = 4;
+const STEP = 5;
+const GLYPH_ADVANCE = 30;
+const SPACE_ADVANCE = 20;
+const VIEWBOX_WIDTH = 660;
+
+function createLine(text: string, y: number) {
+  const characters = [...text.toUpperCase()];
+  const width = characters.reduce(
+    (total, character) =>
+      total + (character === " " ? SPACE_ADVANCE : GLYPH_ADVANCE),
+    0
+  );
+  let x = (VIEWBOX_WIDTH - width) / 2;
+  let path = "";
+
+  for (const character of characters) {
+    if (character === " ") {
+      x += SPACE_ADVANCE;
+      continue;
+    }
+
+    const glyph = GLYPHS[character];
+    if (!glyph) continue;
+
+    glyph.forEach((row, rowIndex) => {
+      [...row].forEach((pixel, columnIndex) => {
+        if (pixel === "1") {
+          path += `M${x + columnIndex * STEP} ${y + rowIndex * STEP}h${PIXEL}v${PIXEL}h-${PIXEL}Z`;
+        }
+      });
+    });
+    x += GLYPH_ADVANCE;
+  }
+
+  return path;
+}
+
+const FIRST_LINE = createLine("Welcome to my page! <3", 17);
+const SECOND_LINE = createLine("I build things.", 62);
+
+export function PixelWelcomeMark(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox={`0 0 ${VIEWBOX_WIDTH} 110`}
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label={"Welcome to my page! <3. I build things."}
+      shapeRendering="crispEdges"
+      {...props}
+    >
+      <rect width="100%" height="100%" fill="#000" />
+      <path d={FIRST_LINE} fill="#fff" />
+      <path d={SECOND_LINE} fill="#fff" />
+    </svg>
+  );
+}

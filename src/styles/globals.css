@@ -429,12 +429,14 @@ input:focus-visible {
   position: absolute;
   z-index: 1;
   display: grid;
-  aspect-ratio: 2 / 1;
+  width: min(86%, 660px);
+  aspect-ratio: 6 / 1;
   place-items: center;
 }
 
 .mark-resize-stage > svg {
   width: 100%;
+  height: 100%;
 }
 
 .resize-frame {

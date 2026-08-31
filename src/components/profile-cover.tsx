@@ -4,7 +4,7 @@ import { RotateCcw } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 
-import { ZSMark } from "@/components/zs-mark";
+import { PixelWelcomeMark } from "@/components/pixel-welcome-mark";
 
 export function ProfileCover() {
   const reduceMotion = useReducedMotion();
@@ -70,13 +70,15 @@ export function ProfileCover() {
         initial={false}
         animate={
           visiblePhase === "mark"
-            ? { opacity: 1, scale: 1, width: [160, 128, 160] }
-            : { opacity: 0, scale: 0.82, width: 160 }
+            ? reduceMotion
+              ? { opacity: 1, scale: 1, scaleX: 1 }
+              : { opacity: 1, scale: 1, scaleX: [1, 0.9, 1] }
+            : { opacity: 0, scale: 0.82, scaleX: 1 }
         }
         transition={{
           opacity: { duration: 0.4 },
           scale: { duration: 0.4 },
-          width: { duration: 1, delay: 0.35 },
+          scaleX: { duration: 1, delay: 0.35 },
         }}
       >
         <motion.div
@@ -89,9 +91,9 @@ export function ProfileCover() {
           <i />
           <i />
           <i />
-          <span>160 × 80</span>
+          <span>660 × 110</span>
         </motion.div>
-        <ZSMark />
+        <PixelWelcomeMark />
       </motion.div>
       <button
         className="cover-replay"
