@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CollapsibleProfileItem } from "@/components/collapsible-profile-item";
 import { FlipSentences } from "@/components/flip-sentences";
 import { ProfileCover } from "@/components/profile-cover";
+import { VerifiedBadge } from "@/components/verified-badge";
 import { ZSMark } from "@/components/zs-mark";
 import {
   EXPERIENCES,
@@ -56,9 +57,7 @@ export default function HomePage() {
                 <h1 id="identity-title">{USER.name}</h1>
                 <p>{USER.handle}</p>
               </div>
-              <span className="verified-mark" title="主页资料占位状态">
-                ✓
-              </span>
+              <VerifiedBadge />
             </div>
             <FlipSentences sentences={USER.flipSentences} />
           </div>
