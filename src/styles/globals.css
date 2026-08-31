@@ -100,6 +100,16 @@ input:focus-visible {
   background: #000;
 }
 
+.dark ::selection {
+  color: #000;
+  background: #fff;
+}
+
+.dark ::-moz-selection {
+  color: #000;
+  background: #fff;
+}
+
 .frame,
 .shell {
   width: min(768px, calc(100% - 32px));
