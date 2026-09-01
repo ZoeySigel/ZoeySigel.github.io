@@ -80,9 +80,9 @@ export function CollapsibleProfileItem({
                   ))}
                 </ul>
               ) : null}
-              {placeholder ? (
+              {/* {placeholder ? (
                 <span className="placeholder-label">待替换</span>
-              ) : null}
+              ) : null} */}
             </div>
           </motion.div>
         ) : null}
