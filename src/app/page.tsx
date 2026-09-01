@@ -42,7 +42,7 @@ export default function HomePage() {
               height={160}
               priority
             />
-            <span>ZS</span>
+            {/* <span>ZS</span> */}
           </div>
           <div className="identity-copy">
             <div className="identity-blueprint" aria-hidden="true">

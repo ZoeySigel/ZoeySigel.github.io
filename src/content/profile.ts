@@ -79,20 +79,19 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCES: Experience[] = [
   {
-    organization: "公司或团队名称",
-    role: "职位名称 · 待补充",
-    period: "20XX — 至今",
-    summary:
-      "描述职责范围、协作对象和一项最有代表性的成果。不要公开未获许可的内部信息。",
+    organization: "广州浩传科技有限公司",
+    role: "Web开发实习生",
+    period: "2026/7 — 2026/9",
+    summary: "进行web开发。",
     defaultOpen: true,
     icon: "NOW",
     placeholder: true,
   },
   {
-    organization: "学校、社区或上一段经历",
-    role: "身份或方向 · 待补充",
-    period: "20XX — 20XX",
-    summary: "补充与你当前方向有关的学习、研究、开源贡献或工作经历。",
+    organization: "湖南大学",
+    role: "计算机科学与技术",
+    period: "2024 — 2028",
+    summary: "努力学习！",
     icon: "PREV",
     placeholder: true,
   },
@@ -126,7 +125,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     label: "邮箱",
-    value: "your-email@example.com · 待替换",
+    value: "2696407757@qq.com",
     href: "mailto:your-email@example.com",
     icon: "mail",
     placeholder: true,
