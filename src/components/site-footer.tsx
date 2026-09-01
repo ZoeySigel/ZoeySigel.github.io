@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="frame footer-inner">
         <div className="footer-brand">
           <ZSMark />
-          <p>© 2026 {USER.name}. 静态生成，持续更新。</p>
+          <p>© 2026 {USER.name}</p>
         </div>
         <div>
           <a href={USER.githubUrl} target="_blank" rel="noreferrer">
