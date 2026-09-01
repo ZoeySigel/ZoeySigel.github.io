@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CollapsibleProfileItem } from "@/components/collapsible-profile-item";
 import { FlipSentences } from "@/components/flip-sentences";
 import { ProfileCover } from "@/components/profile-cover";
+import { TechStackGrid } from "@/components/tech-stack-grid";
 import { VerifiedBadge } from "@/components/verified-badge";
 import { ZSMark } from "@/components/zs-mark";
 import {
@@ -158,18 +159,7 @@ export default function HomePage() {
           aria-labelledby="stack-title"
         >
           <SectionHeading label="TOOLBOX" title="技术栈" />
-          <div className="stack-table" id="stack-title">
-            {TECH_STACK.map((group) => (
-              <article key={group.label}>
-                <h3>{group.label}</h3>
-                <ul>
-                  {group.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
+          <TechStackGrid groups={TECH_STACK} />
         </section>
 
         <Separator />
