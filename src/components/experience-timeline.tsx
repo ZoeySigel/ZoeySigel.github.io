@@ -69,9 +69,9 @@ function ExperienceEntry({
                 <ul>
                   <li>{experience.summary}</li>
                 </ul>
-                {experience.placeholder ? (
+                {/* {experience.placeholder ? (
                   <span className="placeholder-label">待替换</span>
-                ) : null}
+                ) : null} */}
               </div>
             </motion.div>
           ) : null}
