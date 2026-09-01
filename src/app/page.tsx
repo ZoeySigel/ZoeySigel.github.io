@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { FlipSentences } from "@/components/flip-sentences";
+import { GitHubContributions } from "@/components/github-contributions";
 import { ProfileCover } from "@/components/profile-cover";
 import { TechStackGrid } from "@/components/tech-stack-grid";
 import { VerifiedBadge } from "@/components/verified-badge";
@@ -95,6 +96,13 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
+        <Separator />
+
+        <GitHubContributions
+          username={USER.handle.replace(/^@/, "")}
+          profileUrl={USER.githubUrl}
+        />
 
         <Separator />
 
