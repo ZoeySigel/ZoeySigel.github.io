@@ -28,7 +28,7 @@ export type SocialLink = {
 };
 
 export const USER = {
-  name: "ZoeySigel",
+  name: "Zoey Sigel",
   handle: "@ZoeySigel",
   role: "软件开发者 · 方向待补充",
   location: "所在城市 · 待补充",
