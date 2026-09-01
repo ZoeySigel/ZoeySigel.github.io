@@ -36,8 +36,8 @@ export default function HomePage() {
         <section className="identity-panel" aria-labelledby="identity-title">
           <div className="avatar-cell">
             <Image
-              src="/avatar-placeholder.svg"
-              alt="ZoeySigel 的头像占位图，发布前请替换"
+              src="/avatar.jpg"
+              alt="Zoey Sigel 的头像"
               width={160}
               height={160}
               priority

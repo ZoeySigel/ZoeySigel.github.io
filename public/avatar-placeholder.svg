@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" shape-rendering="crispEdges">
-  <rect width="220" height="220" fill="#F4F4F5"/>
-  <g stroke="#D4D4D8" opacity=".8">
-    <path d="M0 44h220M0 88h220M0 132h220M0 176h220"/>
-    <path d="M44 0v220M88 0v220M132 0v220M176 0v220"/>
-  </g>
-  <path fill="#18181B" d="M45 61h62v20H77v12H61v14H45V61Zm0 58h32v-12h15V93h15v66H45v-40Zm76-58h54v20h-35v12h28v20h-28v13h35v20h-54V93h14V81h-14V61Z"/>
-  <text x="110" y="191" text-anchor="middle" fill="#71717A" font-family="monospace" font-size="10" letter-spacing="2">AVATAR PLACEHOLDER</text>
-</svg>
