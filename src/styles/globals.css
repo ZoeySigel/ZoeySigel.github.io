@@ -1009,15 +1009,24 @@ input:focus-visible {
   width: 28px;
   height: 28px;
   flex: 0 0 28px;
-  color: var(--background);
-  border-radius: 50%;
-  background: var(--foreground);
+  overflow: hidden;
+  color: var(--muted);
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  background: #fff;
   place-items: center;
 }
 
 .experience-company-mark svg {
   width: 15px;
   height: 15px;
+}
+
+.experience-company-mark img {
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  object-fit: contain;
 }
 
 .experience-role-track {

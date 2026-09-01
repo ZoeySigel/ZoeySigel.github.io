@@ -85,7 +85,7 @@ export const EXPERIENCES: Experience[] = [
     period: "2026/7 — 2026/9",
     summary: "进行web开发。",
     defaultOpen: true,
-    icon: "NOW",
+    icon: "/experience/haochuan.png",
     placeholder: true,
   },
   {
@@ -93,7 +93,7 @@ export const EXPERIENCES: Experience[] = [
     role: "计算机科学与技术",
     period: "2024 — 2028",
     summary: "努力学习！",
-    icon: "PREV",
+    icon: "/experience/hunan-university.png",
     placeholder: true,
   },
 ];

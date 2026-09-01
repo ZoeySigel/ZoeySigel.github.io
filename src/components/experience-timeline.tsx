@@ -7,6 +7,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import Image from "next/image";
 import { useState } from "react";
 
 import type { Experience } from "@/content/profile";
@@ -21,14 +22,22 @@ function ExperienceEntry({
   const [open, setOpen] = useState(Boolean(experience.defaultOpen));
   const reduceMotion = useReducedMotion();
   const panelId = `experience-${index}`;
-  const OrganizationIcon = index === 0 ? Building2 : GraduationCap;
   const RoleIcon = index === 0 ? BriefcaseBusiness : GraduationCap;
 
   return (
     <article className="experience-company" data-open={open}>
       <header className="experience-company-header">
-        <span className="experience-company-mark" aria-hidden="true">
-          <OrganizationIcon />
+        <span className="experience-company-mark">
+          {experience.icon ? (
+            <Image
+              src={experience.icon}
+              alt={`${experience.organization} 标志`}
+              width={28}
+              height={28}
+            />
+          ) : (
+            <Building2 aria-hidden="true" />
+          )}
         </span>
         <h3>{experience.organization}</h3>
       </header>
