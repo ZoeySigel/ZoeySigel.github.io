@@ -1,13 +1,11 @@
 import {
-  Braces,
-  CircleHelp,
-  CloudUpload,
-  Database,
-  FlaskConical,
-  type LucideIcon,
-} from "lucide-react";
-import {
+  siCss,
+  siDocker,
+  siExpress,
+  siGin,
   siGithubactions,
+  siGo,
+  siHtml5,
   siJavascript,
   type SimpleIcon,
   siNextdotjs,
@@ -15,6 +13,7 @@ import {
   siReact,
   siTailwindcss,
   siTypescript,
+  siVuedotjs,
 } from "simple-icons";
 
 type StackGroup = {
@@ -37,6 +36,15 @@ const BRAND_ICONS: Record<string, BrandEntry> = {
     href: "https://developer.mozilla.org/docs/Web/JavaScript",
     icon: siJavascript,
   },
+  HTML5: {
+    href: "https://developer.mozilla.org/docs/Web/HTML",
+    icon: siHtml5,
+  },
+  CSS3: {
+    href: "https://developer.mozilla.org/docs/Web/CSS",
+    icon: siCss,
+  },
+  Golang: { href: "https://go.dev/", icon: siGo },
   React: { href: "https://react.dev/", icon: siReact },
   "Next.js": {
     href: "https://nextjs.org/",
@@ -44,19 +52,19 @@ const BRAND_ICONS: Record<string, BrandEntry> = {
     monochrome: true,
   },
   "Tailwind CSS": { href: "https://tailwindcss.com/", icon: siTailwindcss },
+  Vue: { href: "https://vuejs.org/", icon: siVuedotjs },
   "Node.js": { href: "https://nodejs.org/", icon: siNodedotjs },
+  Express: {
+    href: "https://expressjs.com/",
+    icon: siExpress,
+    monochrome: true,
+  },
+  Gin: { href: "https://gin-gonic.com/", icon: siGin },
   "GitHub Actions": {
     href: "https://github.com/features/actions",
     icon: siGithubactions,
   },
-};
-
-const PLACEHOLDER_ICONS: Record<string, LucideIcon> = {
-  请补充: CircleHelp,
-  数据库待补充: Database,
-  "API 设计": Braces,
-  静态部署: CloudUpload,
-  测试方案待补充: FlaskConical,
+  Docker: { href: "https://www.docker.com/", icon: siDocker },
 };
 
 function BrandLogo({ icon }: { icon: SimpleIcon }) {
@@ -76,41 +84,24 @@ export function TechStackGrid({ groups }: { groups: readonly StackGroup[] }) {
         {items.map((item) => {
           const brand = BRAND_ICONS[item];
 
-          if (brand) {
-            return (
-              <li key={item}>
-                <a
-                  className="stack-logo-item"
-                  data-label={item}
-                  data-monochrome={brand.monochrome || undefined}
-                  href={brand.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`${item} 官方网站`}
-                  style={
-                    brand.monochrome
-                      ? undefined
-                      : { color: `#${brand.icon.hex}` }
-                  }
-                >
-                  <BrandLogo icon={brand.icon} />
-                </a>
-              </li>
-            );
-          }
-
-          const PlaceholderIcon = PLACEHOLDER_ICONS[item] ?? CircleHelp;
+          if (!brand) return null;
 
           return (
             <li key={item}>
-              <span
-                className="stack-logo-item stack-logo-placeholder"
+              <a
+                className="stack-logo-item"
                 data-label={item}
-                role="img"
-                aria-label={item}
+                data-monochrome={brand.monochrome || undefined}
+                href={brand.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${item} 官方网站`}
+                style={
+                  brand.monochrome ? undefined : { color: `#${brand.icon.hex}` }
+                }
               >
-                <PlaceholderIcon aria-hidden="true" />
-              </span>
+                <BrandLogo icon={brand.icon} />
+              </a>
             </li>
           );
         })}

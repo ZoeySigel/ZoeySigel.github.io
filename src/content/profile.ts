@@ -101,19 +101,19 @@ export const EXPERIENCES: Experience[] = [
 export const TECH_STACK = [
   {
     label: "常用语言",
-    items: ["TypeScript", "JavaScript", "请补充"],
+    items: ["TypeScript", "JavaScript", "HTML5", "CSS3", "Golang"],
   },
   {
     label: "前端与体验",
-    items: ["React", "Next.js", "Tailwind CSS"],
+    items: ["React", "Next.js", "Tailwind CSS", "Vue"],
   },
   {
     label: "服务与数据",
-    items: ["Node.js", "数据库待补充", "API 设计"],
+    items: ["Node.js", "Express", "Gin"],
   },
   {
     label: "工程与交付",
-    items: ["GitHub Actions", "静态部署", "测试方案待补充"],
+    items: ["GitHub Actions", "Docker"],
   },
 ] as const;
 
