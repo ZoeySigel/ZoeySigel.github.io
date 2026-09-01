@@ -158,11 +158,11 @@ export default function HomePage() {
         >
           <SectionHeading label="OPEN CHANNEL" title="联系我" />
           <div className="contact-intro" id="contact-title">
-            <ZSMark />
-            <div>
+            {/* <ZSMark /> */}
+            {/* <div>
               <h3>从一个具体问题开始。</h3>
               <p>工作机会、开源协作或技术交流，都可以从下面的渠道联系。</p>
-            </div>
+            </div> */}
           </div>
           <ul className="social-grid">
             {SOCIAL_LINKS.map((link) => {
