@@ -2,19 +2,13 @@ import { ArrowUpRight, Github, Mail, MapPin, Radio } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { CollapsibleProfileItem } from "@/components/collapsible-profile-item";
+import { ExperienceTimeline } from "@/components/experience-timeline";
 import { FlipSentences } from "@/components/flip-sentences";
 import { ProfileCover } from "@/components/profile-cover";
 import { TechStackGrid } from "@/components/tech-stack-grid";
 import { VerifiedBadge } from "@/components/verified-badge";
 import { ZSMark } from "@/components/zs-mark";
-import {
-  EXPERIENCES,
-  PROJECTS,
-  SOCIAL_LINKS,
-  TECH_STACK,
-  USER,
-} from "@/content/profile";
+import { EXPERIENCES, SOCIAL_LINKS, TECH_STACK, USER } from "@/content/profile";
 import { formatPostDate, getAllPosts } from "@/lib/posts";
 
 function Separator() {
@@ -106,49 +100,11 @@ export default function HomePage() {
 
         <section
           className="content-panel"
-          id="work"
-          aria-labelledby="work-title"
-        >
-          <SectionHeading label="SELECTED WORK" title="精选项目" />
-          <div className="collapsible-list" id="work-title">
-            {PROJECTS.map((project) => (
-              <CollapsibleProfileItem
-                key={project.title}
-                icon={project.icon}
-                title={project.title}
-                period={project.period}
-                description={project.summary}
-                tags={project.stack}
-                href={project.href}
-                defaultOpen={project.defaultOpen}
-                placeholder={project.placeholder}
-              />
-            ))}
-          </div>
-        </section>
-
-        <Separator />
-
-        <section
-          className="content-panel"
           id="experience"
           aria-labelledby="experience-title"
         >
           <SectionHeading label="CHANGELOG" title="经历与教育" />
-          <div className="collapsible-list" id="experience-title">
-            {EXPERIENCES.map((experience) => (
-              <CollapsibleProfileItem
-                key={experience.organization}
-                icon={experience.icon}
-                title={experience.organization}
-                subtitle={experience.role}
-                period={experience.period}
-                description={experience.summary}
-                defaultOpen={experience.defaultOpen}
-                placeholder={experience.placeholder}
-              />
-            ))}
-          </div>
+          <ExperienceTimeline experiences={EXPERIENCES} />
         </section>
 
         <Separator />

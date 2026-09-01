@@ -823,6 +823,172 @@ input:focus-visible {
   font-weight: 550;
 }
 
+.experience-list {
+  padding: 0 8px 0 16px;
+  border-top: 1px solid var(--edge);
+}
+
+.experience-company {
+  padding: 16px 0;
+}
+
+.experience-company + .experience-company {
+  border-top: 1px solid var(--edge);
+}
+
+.experience-company-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.experience-company-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 550;
+  line-height: 1.35;
+}
+
+.experience-company-mark {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  color: var(--background);
+  border-radius: 50%;
+  background: var(--foreground);
+  place-items: center;
+}
+
+.experience-company-mark svg {
+  width: 15px;
+  height: 15px;
+}
+
+.experience-role-track {
+  position: relative;
+}
+
+.experience-role-track::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 11px;
+  width: 1px;
+  content: "";
+  background: var(--edge);
+}
+
+.experience-role-trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.experience-role-trigger::before {
+  position: absolute;
+  inset: -4px 0 -6px 28px;
+  z-index: 0;
+  border-radius: 7px;
+  content: "";
+  transition: background 180ms ease;
+}
+
+.experience-role-trigger:hover::before {
+  background: var(--surface-2);
+}
+
+.experience-role-heading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 3px;
+}
+
+.experience-role-heading strong {
+  min-width: 0;
+  flex: 1;
+  font-size: 15px;
+  font-weight: 550;
+}
+
+.experience-role-heading > svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  color: var(--muted);
+}
+
+.experience-role-node {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  color: var(--muted);
+  border: 1px solid var(--edge-strong);
+  border-radius: 6px;
+  background: var(--surface-2);
+  box-shadow:
+    0 0 0 1px var(--background),
+    0 0 0 2px var(--edge);
+  place-items: center;
+}
+
+.experience-role-node svg {
+  width: 14px;
+  height: 14px;
+}
+
+.experience-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 36px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.experience-meta i {
+  width: 1px;
+  height: 15px;
+  background: var(--edge-strong);
+}
+
+.experience-meta span:last-child {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.experience-details {
+  overflow: hidden;
+}
+
+.experience-details > div {
+  padding: 10px 8px 0 36px;
+}
+
+.experience-details ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-family: var(--font-geist-mono), "Noto Sans SC Variable", monospace;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.experience-details li::marker {
+  color: var(--edge-strong);
+}
+
 .collapsible-list {
   border-top: 1px solid var(--edge);
 }

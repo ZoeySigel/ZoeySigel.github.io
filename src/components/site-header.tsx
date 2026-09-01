@@ -15,7 +15,6 @@ export function SiteHeader() {
   }));
   const commandItems = [
     { label: "首页", detail: "个人主页", href: "/" },
-    { label: "精选项目", detail: "查看代表项目", href: "/#work" },
     { label: "经历", detail: "工作与教育", href: "/#experience" },
     { label: "技术栈", detail: "常用工具", href: "/#stack" },
     { label: "联系", detail: "联系方式", href: "/#contact" },
