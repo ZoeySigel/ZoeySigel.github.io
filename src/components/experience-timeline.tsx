@@ -49,8 +49,8 @@ function ExperienceEntry({
             <ChevronsUpDown aria-hidden="true" />
           </span>
           <span className="experience-meta">
-            <span>{index === 0 ? "工作经历" : " 教育经历"}</span>
-            <i aria-hidden="true" />
+            {/* <span>{index === 0 ? "工作经历" : " 教育经历"}</span>
+            <i aria-hidden="true" /> */}
             <span>{experience.period}</span>
           </span>
         </button>
