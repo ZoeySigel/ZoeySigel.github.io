@@ -27,6 +27,7 @@ function SectionHeading({ label, title }: { label: string; title: string }) {
 
 export default function HomePage() {
   const latestPosts = getAllPosts().slice(0, 2);
+  const email = SOCIAL_LINKS.find((link) => link.icon === "mail")?.value;
 
   return (
     <main className="profile-main" id="main-content">
@@ -77,10 +78,10 @@ export default function HomePage() {
             </span>
           </div>
           <div className="overview-item">
-            <Github aria-hidden="true" />
+            <Mail aria-hidden="true" />
             <span>
-              <small>GITHUB</small>
-              {USER.handle}
+              <small>EMAIL</small>
+              {email ?? "邮箱待补充"}
             </span>
           </div>
         </section>
