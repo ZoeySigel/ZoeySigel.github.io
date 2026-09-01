@@ -112,7 +112,7 @@ export default function HomePage() {
           id="experience"
           aria-labelledby="experience-title"
         >
-          <SectionHeading label="CHANGELOG" title="经历与教育" />
+          <SectionHeading label="CHANGELOG" title="经历" />
           <ExperienceTimeline experiences={EXPERIENCES} />
         </section>
 
