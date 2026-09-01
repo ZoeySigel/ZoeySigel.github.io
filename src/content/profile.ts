@@ -30,15 +30,16 @@ export type SocialLink = {
 export const USER = {
   name: "Zoey Sigel",
   handle: "@ZoeySigel",
-  role: "软件开发者 · 方向待补充",
-  location: "所在城市 · 待补充",
-  availability: "正在整理个人项目与经历",
-  flipSentences: ["全栈Web开发工程师", "AI应用开发工程师", "Agent开发工程师"],
-  bio: "这里将用两三句话说明你的技术方向、解决过的问题，以及希望与什么样的团队合作。当前内容为安全占位文案。",
-  about: [
-    "用一段简短、具体的介绍替换这里：你关注的技术领域、工作方式，以及你能为团队带来的价值。",
-    "再补充一个能被验证的事实，例如项目规模、职责边界或一次有代表性的技术决策。避免只罗列形容词。",
+  role: "前端开发/Web全栈开发",
+  location: "湖南 · 长沙",
+  availability: "寻找实习机会中",
+  flipSentences: [
+    "Web Developer",
+    "Full-stack Developer",
+    "AI Application Developer",
   ],
+  bio: "我是一名湖南大学在读学生，正在寻找前端/全栈开发实习机会",
+  about: ["熟悉React、Vue及相关生态", "熟悉使用Node.js、Express、Next.js开发"],
   githubUrl: "https://github.com/ZoeySigel",
   siteUrl: "https://ZoeySigel.github.io",
 } as const;
@@ -126,7 +127,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: "邮箱",
     value: "2696407757@qq.com",
-    href: "mailto:your-email@example.com",
+    href: "mailto:2696407757@qq.com",
     icon: "mail",
     placeholder: true,
   },
