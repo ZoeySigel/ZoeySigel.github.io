@@ -100,13 +100,6 @@ export default function HomePage() {
 
         <Separator />
 
-        <GitHubContributions
-          username={USER.handle.replace(/^@/, "")}
-          profileUrl={USER.githubUrl}
-        />
-
-        <Separator />
-
         <section
           className="content-panel"
           id="experience"
@@ -115,6 +108,13 @@ export default function HomePage() {
           <SectionHeading label="CHANGELOG" title="经历" />
           <ExperienceTimeline experiences={EXPERIENCES} />
         </section>
+
+        <Separator />
+
+        <GitHubContributions
+          username={USER.handle.replace(/^@/, "")}
+          profileUrl={USER.githubUrl}
+        />
 
         <Separator />
 
