@@ -1,8 +1,8 @@
 # ZoeySigel.github.io
 
-一个面向招聘者与技术合作者的中文个人主页，包含作品集、经历、技术栈和静态 MDX
-博客。项目基于 Next.js 16、Tailwind CSS 4 构建，通过 GitHub Actions 自动发布到
-GitHub Pages。
+一个面向招聘者与技术合作者的中文个人主页，包含个人介绍、经历、技术栈和产品页面。
+项目基于 Next.js 16、Tailwind CSS 4 构建，通过 GitHub Actions 自动发布到 GitHub
+Pages。
 
 > 当前简介、经历、项目和联系方式均为醒目的占位内容。发布前请按照下面的清单替换。
 
@@ -30,31 +30,17 @@ GitHub Pages 接近的静态托管效果。
 ## 替换个人内容
 
 - `src/content/profile.ts`：姓名、简介、经历、项目、技术栈和社交链接。
-- `public/avatar-placeholder.svg`：头像占位图。
+- `public/avatar.jpg`：个人头像。
 - `public/og-image.svg`：分享卡片。
 - `src/app/layout.tsx` 与 `src/app/manifest.ts`：站点级 SEO 和应用信息。
 
-仓库不会从 GitHub 自动抓取或公开私人资料。替换占位邮箱时，同时检查页面中是否仍有
-“待替换”标签。
+仓库仅在构建期读取 GitHub 的公开贡献记录，不读取私人资料。替换占位邮箱时，同时检查
+页面中是否仍有“待替换”标签。
 
-## 添加博客文章
+## 添加产品
 
-在 `src/content/posts/` 新建 `.mdx` 文件：
-
-```mdx
----
-title: 文章标题
-description: 一句话摘要
-publishedAt: 2026-08-30
-tags:
-  - Next.js
----
-
-正文内容。
-```
-
-文件名会成为 URL，例如 `hello-world.mdx` 对应 `/blog/hello-world/`。动态路由会在
-构建时通过 `generateStaticParams` 生成，因此不需要服务器。
+产品页面位于 `src/app/products/page.tsx`。获得可公开展示的产品资料后，可将当前空状态
+替换为产品卡片；图片请保存到 `public/`，不要依赖运行时图片优化或服务器接口。
 
 ## GitHub Pages 部署
 
@@ -72,7 +58,7 @@ Pull Request 会执行格式、Lint、类型和静态构建检查，但不会部
 - 页面 404：确认仓库名大小写为 `ZoeySigel.github.io`，Pages Source 为 GitHub
   Actions。
 - 资源加载失败：不要为这个用户主页仓库设置 `basePath`。
-- 新文章打开 404：确认 frontmatter 完整，并重新执行 `pnpm build`。
+- 产品页打开 404：确认已重新执行 `pnpm build`，并检查 `out/products/index.html`。
 - 部署失败：先在本地依次运行四项提交前检查，查看第一个失败命令。
 
 ## 来源与许可

@@ -1,6 +1,5 @@
 import { ArrowUpRight, Github, Mail, MapPin, Radio } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { FlipSentences } from "@/components/flip-sentences";
@@ -8,9 +7,7 @@ import { GitHubContributions } from "@/components/github-contributions";
 import { ProfileCover } from "@/components/profile-cover";
 import { TechStackGrid } from "@/components/tech-stack-grid";
 import { VerifiedBadge } from "@/components/verified-badge";
-import { ZSMark } from "@/components/zs-mark";
 import { EXPERIENCES, SOCIAL_LINKS, TECH_STACK, USER } from "@/content/profile";
-import { formatPostDate, getAllPosts } from "@/lib/posts";
 
 function Separator() {
   return <div className="stripe-separator" aria-hidden="true" />;
@@ -26,7 +23,6 @@ function SectionHeading({ label, title }: { label: string; title: string }) {
 }
 
 export default function HomePage() {
-  const latestPosts = getAllPosts().slice(0, 2);
   const email = SOCIAL_LINKS.find((link) => link.icon === "mail")?.value;
 
   return (
@@ -125,29 +121,6 @@ export default function HomePage() {
         >
           <SectionHeading label="TOOLBOX" title="技术栈" />
           <TechStackGrid groups={TECH_STACK} />
-        </section>
-
-        <Separator />
-
-        <section className="content-panel" aria-labelledby="writing-title">
-          <SectionHeading label="WRITING LOG" title="最新文章" />
-          <div className="article-list" id="writing-title">
-            {latestPosts.map((post) => (
-              <Link href={`/blog/${post.slug}/`} key={post.slug}>
-                <time dateTime={post.metadata.publishedAt}>
-                  {formatPostDate(post.metadata.publishedAt)}
-                </time>
-                <span>
-                  <strong>{post.metadata.title}</strong>
-                  <small>{post.metadata.description}</small>
-                </span>
-                <ArrowUpRight aria-hidden="true" />
-              </Link>
-            ))}
-          </div>
-          <Link className="panel-link" href="/blog/">
-            查看全部文章 <ArrowUpRight aria-hidden="true" />
-          </Link>
         </section>
 
         <Separator />

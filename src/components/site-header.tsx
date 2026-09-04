@@ -5,20 +5,14 @@ import { CommandMenu } from "@/components/command-menu";
 import { SiteHeaderWrapper } from "@/components/site-header-wrapper";
 import { SiteNav } from "@/components/site-nav";
 import { ZSMark } from "@/components/zs-mark";
-import { getAllPosts } from "@/lib/posts";
 
 export function SiteHeader() {
-  const postItems = getAllPosts().map((post) => ({
-    label: post.metadata.title,
-    detail: "博客文章",
-    href: `/blog/${post.slug}/`,
-  }));
   const commandItems = [
     { label: "首页", detail: "个人主页", href: "/" },
+    { label: "产品", detail: "产品与实验", href: "/products/" },
     { label: "经历", detail: "工作与教育", href: "/#experience" },
     { label: "技术栈", detail: "常用工具", href: "/#stack" },
     { label: "联系", detail: "联系方式", href: "/#contact" },
-    ...postItems,
   ];
 
   return (

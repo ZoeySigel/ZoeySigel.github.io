@@ -1268,9 +1268,7 @@ input:focus-visible {
 }
 
 .collapsible-content li,
-.placeholder-label,
-.article-header li,
-.blog-index li {
+.placeholder-label {
   padding: 2px 7px;
   color: var(--muted);
   border: 1px solid var(--edge);
@@ -1372,61 +1370,8 @@ input:focus-visible {
   color: #fafafa;
 }
 
-.article-list {
-  border-top: 1px solid var(--edge);
-}
-
-.article-list a {
-  display: grid;
-  grid-template-columns: 100px minmax(0, 1fr) 20px;
-  align-items: center;
-  gap: 14px;
-  padding: 16px;
-  border-bottom: 1px solid var(--edge);
-  transition: background 180ms ease;
-}
-
-.article-list a:hover {
-  background: var(--surface-2);
-}
-
-.article-list time,
-.article-list small,
-.article-list strong {
-  display: block;
-}
-
-.article-list time {
-  color: var(--muted);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 11px;
-}
-
-.article-list strong {
-  font-size: 14px;
-}
-
-.article-list small {
-  overflow: hidden;
-  color: var(--muted);
-  font-size: 12px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.article-list svg,
-.panel-link svg,
 .social-grid svg {
   width: 16px;
-}
-
-.panel-link {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 6px;
-  padding: 12px 16px;
-  font-size: 12px;
 }
 
 .contact-intro {
@@ -1498,9 +1443,8 @@ input:focus-visible {
   font-size: 10px;
 }
 
-/* Blog and article */
+/* Secondary pages */
 .page-main,
-.article-main,
 .not-found {
   min-height: calc(100vh - 160px);
   border-right: 1px solid var(--edge);
@@ -1508,16 +1452,14 @@ input:focus-visible {
   background: var(--background);
 }
 
-.page-intro,
-.article-header {
+.page-intro {
   padding: 64px 28px 28px;
   border-bottom: 1px solid var(--edge);
   background-image: radial-gradient(var(--pattern) 1px, transparent 1px);
   background-size: 10px 10px;
 }
 
-.page-intro p,
-.article-header > p {
+.page-intro p {
   margin: 0 0 10px;
   color: var(--muted);
   font-family: var(--font-geist-mono), monospace;
@@ -1525,8 +1467,7 @@ input:focus-visible {
   letter-spacing: 0.12em;
 }
 
-.page-intro h1,
-.article-header h1 {
+.page-intro h1 {
   max-width: 720px;
   margin: 0 0 10px;
   font-size: clamp(34px, 7vw, 56px);
@@ -1534,104 +1475,103 @@ input:focus-visible {
   letter-spacing: -0.055em;
 }
 
-.page-intro > span,
-.article-header > span {
+.page-intro > span {
   color: var(--muted);
 }
 
-.blog-index > a {
+.product-empty-state {
   display: grid;
-  gap: 7px;
-  padding: 22px 28px;
-  border-bottom: 1px solid var(--edge);
-  transition: background 180ms ease;
+  min-height: 390px;
+  padding: 48px 24px;
+  background-image: radial-gradient(var(--pattern) 0.8px, transparent 0.8px);
+  background-size: 14px 14px;
+  place-items: center;
 }
 
-.blog-index > a:hover {
-  background: var(--surface-2);
+.product-empty-card {
+  position: relative;
+  width: min(430px, 100%);
+  padding: 28px;
+  border: 1px solid var(--edge);
+  background: var(--background);
+  box-shadow: 8px 8px 0 var(--surface-2);
 }
 
-.blog-index time {
-  color: var(--muted);
+.product-empty-card::before,
+.product-empty-card::after {
+  position: absolute;
+  color: var(--edge-strong);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 11px;
-}
-
-.blog-index h2,
-.blog-index p {
-  margin: 0;
-}
-
-.blog-index h2 {
-  font-size: 21px;
-}
-
-.blog-index p {
-  color: var(--muted);
-}
-
-.blog-index ul,
-.article-header ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 8px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.article-header > div {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 18px;
-  color: var(--muted);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 11px;
-}
-
-.article-header ul {
-  margin: 0;
-}
-
-.prose {
-  max-width: 70ch;
-  margin-inline: auto;
-  padding: 42px 28px 72px;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1;
+  content: "+";
 }
 
-.prose h2,
-.prose h3 {
-  margin-top: 2em;
-  line-height: 1.25;
+.product-empty-card::before {
+  top: -9px;
+  left: -6px;
+}
+
+.product-empty-card::after {
+  right: -6px;
+  bottom: -9px;
+}
+
+.product-empty-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 24px;
+  border: 1px solid var(--edge-strong);
+  background: var(--surface-2);
+  place-items: center;
+}
+
+.product-empty-icon svg {
+  width: 20px;
+}
+
+.product-empty-card p,
+.product-empty-card h2,
+.product-empty-card > span {
+  margin: 0;
+}
+
+.product-empty-card p {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.product-empty-card h2 {
+  margin-bottom: 8px;
+  font-size: 24px;
   letter-spacing: -0.025em;
 }
 
-.prose a {
-  color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.product-empty-card > span {
+  display: block;
+  color: var(--muted);
 }
 
-.prose pre {
-  overflow-x: auto;
-  padding: 16px;
-  border: 1px solid var(--edge);
-  border-radius: 6px;
-  background: var(--surface-2);
-  font-family: var(--font-geist-mono), monospace;
+.product-empty-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
   font-size: 13px;
+  font-weight: 550;
 }
 
-.prose code:not(pre code) {
-  padding: 2px 5px;
-  border: 1px solid var(--edge);
-  border-radius: 3px;
-  background: var(--surface-2);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.88em;
+.product-empty-card a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.product-empty-card a svg {
+  width: 15px;
 }
 
 .not-found {
@@ -1926,14 +1866,6 @@ html[data-custom-cursor="true"] * {
     border-right: 0;
   }
 
-  .article-list a {
-    grid-template-columns: 1fr 18px;
-  }
-
-  .article-list time {
-    grid-column: 1 / -1;
-  }
-
   .contact-intro > svg {
     width: 52px;
     flex-basis: 52px;
@@ -1944,15 +1876,8 @@ html[data-custom-cursor="true"] * {
     flex-direction: column;
   }
 
-  .page-intro,
-  .article-header {
+  .page-intro {
     padding: 48px 18px 22px;
-  }
-
-  .blog-index > a,
-  .prose {
-    padding-right: 18px;
-    padding-left: 18px;
   }
 }
 
