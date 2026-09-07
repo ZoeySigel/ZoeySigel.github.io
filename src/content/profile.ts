@@ -81,9 +81,9 @@ export const PROJECTS: Project[] = [
 export const EXPERIENCES: Experience[] = [
   {
     organization: "广州浩传网络科技有限公司",
-    role: "Web开发实习生",
+    role: "前端开发实习生",
     period: "2026/7 — 2026/9",
-    summary: "进行web开发。",
+    summary: "详情见简历",
     defaultOpen: true,
     icon: "/experience/haochuan.png",
     placeholder: true,
