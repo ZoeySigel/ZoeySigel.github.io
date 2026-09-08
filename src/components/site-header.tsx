@@ -12,6 +12,7 @@ export function SiteHeader() {
     { label: "产品", detail: "产品与实验", href: "/products/" },
     { label: "经历", detail: "工作与教育", href: "/#experience" },
     { label: "技术栈", detail: "常用工具", href: "/#stack" },
+    { label: "开源参与", detail: "参与贡献的项目", href: "/#open-source" },
     { label: "联系", detail: "联系方式", href: "/#contact" },
   ];
 

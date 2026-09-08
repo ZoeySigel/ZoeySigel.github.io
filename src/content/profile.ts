@@ -27,6 +27,14 @@ export type SocialLink = {
   placeholder?: boolean;
 };
 
+export type OpenSourceProject = {
+  owner: string;
+  name: string;
+  summary: string;
+  href: string;
+  icon: "vitest" | "radar";
+};
+
 export const USER = {
   name: "Zoey Sigel",
   handle: "@ZoeySigel",
@@ -116,6 +124,23 @@ export const TECH_STACK = [
     items: ["GitHub Actions", "Docker"],
   },
 ] as const;
+
+export const OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
+  {
+    owner: "vitest-dev",
+    name: "vitest",
+    summary: "由 Vite 驱动的下一代测试框架。",
+    href: "https://github.com/vitest-dev/vitest",
+    icon: "vitest",
+  },
+  {
+    owner: "skyhook-io",
+    name: "radar",
+    summary: "面向 Kubernetes 的开源界面，聚合拓扑、事件时间线与服务流量。",
+    href: "https://github.com/skyhook-io/radar",
+    icon: "radar",
+  },
+];
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {

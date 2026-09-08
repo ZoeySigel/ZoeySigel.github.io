@@ -4,10 +4,17 @@ import Image from "next/image";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { FlipSentences } from "@/components/flip-sentences";
 import { GitHubContributions } from "@/components/github-contributions";
+import { OpenSourceProjects } from "@/components/open-source-projects";
 import { ProfileCover } from "@/components/profile-cover";
 import { TechStackGrid } from "@/components/tech-stack-grid";
 import { VerifiedBadge } from "@/components/verified-badge";
-import { EXPERIENCES, SOCIAL_LINKS, TECH_STACK, USER } from "@/content/profile";
+import {
+  EXPERIENCES,
+  OPEN_SOURCE_PROJECTS,
+  SOCIAL_LINKS,
+  TECH_STACK,
+  USER,
+} from "@/content/profile";
 
 function Separator() {
   return <div className="stripe-separator" aria-hidden="true" />;
@@ -121,6 +128,19 @@ export default function HomePage() {
         >
           <SectionHeading label="TOOLBOX" title="技术栈" />
           <TechStackGrid groups={TECH_STACK} />
+        </section>
+
+        <Separator />
+
+        <section
+          className="content-panel"
+          id="open-source"
+          aria-labelledby="open-source-title"
+        >
+          <SectionHeading label="CONTRIBUTION LOG" title="开源参与" />
+          <div id="open-source-title">
+            <OpenSourceProjects projects={OPEN_SOURCE_PROJECTS} />
+          </div>
         </section>
 
         <Separator />
