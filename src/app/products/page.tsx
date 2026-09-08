@@ -14,7 +14,7 @@ export default function ProductsPage() {
       <header className="page-intro">
         <p>PRODUCT LOG</p>
         <h1>产品</h1>
-        <span>记录正在构建、验证和持续改进的产品。</span>
+        <span>正在做的东西。</span>
       </header>
 
       <section className="product-empty-state" aria-labelledby="product-status">
