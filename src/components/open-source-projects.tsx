@@ -53,7 +53,7 @@ export function OpenSourceProjects({
               </span>
               <span className="open-source-summary">{project.summary}</span>
             </span>
-            <span className="contribution-label">参与贡献</span>
+            {/* <span className="contribution-label">参与贡献</span> */}
             <ArrowUpRight className="open-source-arrow" aria-hidden="true" />
           </a>
         </li>
