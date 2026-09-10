@@ -48,7 +48,7 @@ export const USER = {
     "AI Application Developer",
   ],
   bio: "我是一名湖南大学在读学生，正在寻找前端/全栈开发实习机会",
-  about: ["熟悉React、Vue及相关生态", "熟悉使用Node.js、Express、Next.js开发"],
+  about: ["熟悉使用React、Vue及相关生态", "熟悉使用Next.js进行开发"],
   githubUrl: "https://github.com/ZoeySigel",
   siteUrl: "https://ZoeySigel.github.io",
 } as const;
