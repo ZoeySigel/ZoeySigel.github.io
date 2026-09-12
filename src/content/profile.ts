@@ -131,14 +131,14 @@ export const OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
     owner: "vitest-dev",
     name: "vitest",
     summary: "由 Vite 驱动的下一代测试框架。",
-    detail: "修复公共 TypeScript 类型声明的依赖泄漏与 Browser API 类型导出问题",
+    detail: "修复公共TypeScript类型声明的依赖泄漏与Browser API类型导出问题",
     href: "https://github.com/vitest-dev/vitest",
     icon: "vitest",
   },
   {
     owner: "skyhook-io",
     name: "radar",
-    summary: "面向 Kubernetes 的开源界面，聚合拓扑、事件时间线与服务流量。",
+    summary: "面向Kubernetes的开源界面，聚合拓扑、事件时间线与服务流量。",
     detail:
       "修复 Kubernetes CAPI 资源 API Group 模糊匹配导致的第三方 CRD 错误渲染问题",
     href: "https://github.com/skyhook-io/radar",
