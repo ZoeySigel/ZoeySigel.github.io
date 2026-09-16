@@ -39,7 +39,7 @@ export type OpenSourceProject = {
 export const USER = {
   name: "Zoey Sigel",
   handle: "@ZoeySigel",
-  role: "全栈开发/后端开发/Agent开发",
+  role: "全栈开发/Agent开发",
   location: "湖南 · 长沙",
   availability: "寻找实习机会中",
   flipSentences: [
