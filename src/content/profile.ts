@@ -41,7 +41,7 @@ export const USER = {
   handle: "@ZoeySigel",
   role: "全栈开发/Agent开发",
   location: "湖南 · 长沙",
-  availability: "寻找实习机会中",
+  availability: "寻找实习机会中 ",
   flipSentences: [
     "Web Developer",
     "Full-stack Developer",
