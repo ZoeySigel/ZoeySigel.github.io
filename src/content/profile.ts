@@ -121,7 +121,7 @@ export const TECH_STACK = [
   },
   {
     label: "服务与数据",
-    items: ["Node.js", "Express", "Gin"],
+    items: ["Node.js", "Express", "Gin", "MySQL", "Redis", "RabbitMQ", "GORM"],
   },
   {
     label: "工程与交付",

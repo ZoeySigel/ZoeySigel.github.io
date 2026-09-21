@@ -8,9 +8,12 @@ import {
   siHtml5,
   siJavascript,
   type SimpleIcon,
+  siMysql,
   siNextdotjs,
   siNodedotjs,
+  siRabbitmq,
   siReact,
+  siRedis,
   siTailwindcss,
   siTypescript,
   siVuedotjs,
@@ -23,7 +26,8 @@ type StackGroup = {
 
 type BrandEntry = {
   href: string;
-  icon: SimpleIcon;
+  icon?: SimpleIcon;
+  mark?: "gorm";
   monochrome?: boolean;
 };
 
@@ -60,6 +64,14 @@ const BRAND_ICONS: Record<string, BrandEntry> = {
     monochrome: true,
   },
   Gin: { href: "https://gin-gonic.com/", icon: siGin },
+  MySQL: { href: "https://www.mysql.com/", icon: siMysql },
+  Redis: { href: "https://redis.io/", icon: siRedis },
+  RabbitMQ: { href: "https://www.rabbitmq.com/", icon: siRabbitmq },
+  GORM: {
+    href: "https://gorm.io/",
+    mark: "gorm",
+    monochrome: true,
+  },
   "GitHub Actions": {
     href: "https://github.com/features/actions",
     icon: siGithubactions,
@@ -67,10 +79,23 @@ const BRAND_ICONS: Record<string, BrandEntry> = {
   Docker: { href: "https://www.docker.com/", icon: siDocker },
 };
 
-function BrandLogo({ icon }: { icon: SimpleIcon }) {
+function BrandLogo({ brand }: { brand: BrandEntry }) {
+  if (brand.mark === "gorm") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M20.7 10.4H12v3.7h4.6a5.3 5.3 0 1 1-1.3-5.5L18 6A9 9 0 1 0 21 12c0-.5-.1-1.1-.3-1.6Z"
+          fill="currentColor"
+        />
+      </svg>
+    );
+  }
+
+  if (!brand.icon) return null;
+
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d={icon.path} fill="currentColor" />
+      <path d={brand.icon.path} fill="currentColor" />
     </svg>
   );
 }
@@ -97,10 +122,12 @@ export function TechStackGrid({ groups }: { groups: readonly StackGroup[] }) {
                 rel="noreferrer"
                 aria-label={`${item} 官方网站`}
                 style={
-                  brand.monochrome ? undefined : { color: `#${brand.icon.hex}` }
+                  brand.monochrome || !brand.icon
+                    ? undefined
+                    : { color: `#${brand.icon.hex}` }
                 }
               >
-                <BrandLogo icon={brand.icon} />
+                <BrandLogo brand={brand} />
               </a>
             </li>
           );
