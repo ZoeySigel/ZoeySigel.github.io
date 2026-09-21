@@ -39,7 +39,7 @@ export type OpenSourceProject = {
 export const USER = {
   name: "Zoey Sigel",
   handle: "@ZoeySigel",
-  role: "全栈开发/Agent开发",
+  role: "全栈开发/AI应用开发",
   location: "湖南 · 长沙",
   availability: "寻找实习机会中 ",
   flipSentences: [
@@ -48,7 +48,10 @@ export const USER = {
     "AI Application Developer",
   ],
   bio: "我是一名湖南大学在读学生，正在寻找全栈/Agent开发实习机会",
-  about: ["熟悉使用React、Vue及相关生态", "熟悉使用Next.js进行开发"],
+  about: [
+    "熟悉使用React、Vue及相关生态，熟悉使用Next.js进行开发",
+    "熟悉使用Go进行后端开发，掌握并发编程、服务间通信、缓存、消息队列及分布式系统基础",
+  ],
   githubUrl: "https://github.com/ZoeySigel",
   siteUrl: "https://ZoeySigel.github.io",
 } as const;
