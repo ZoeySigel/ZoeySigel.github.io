@@ -1672,7 +1672,7 @@ input:focus-visible {
   color: var(--muted);
 }
 
-.product-empty-state {
+.product-showcase {
   display: grid;
   min-height: 390px;
   padding: 48px 24px;
@@ -1681,7 +1681,7 @@ input:focus-visible {
   place-items: center;
 }
 
-.product-empty-card {
+.product-card {
   position: relative;
   width: min(430px, 100%);
   padding: 28px;
@@ -1690,8 +1690,8 @@ input:focus-visible {
   box-shadow: 8px 8px 0 var(--surface-2);
 }
 
-.product-empty-card::before,
-.product-empty-card::after {
+.product-card::before,
+.product-card::after {
   position: absolute;
   color: var(--edge-strong);
   font-family: var(--font-geist-mono), monospace;
@@ -1700,17 +1700,17 @@ input:focus-visible {
   content: "+";
 }
 
-.product-empty-card::before {
+.product-card::before {
   top: -9px;
   left: -6px;
 }
 
-.product-empty-card::after {
+.product-card::after {
   right: -6px;
   bottom: -9px;
 }
 
-.product-empty-icon {
+.product-icon {
   display: grid;
   width: 44px;
   height: 44px;
@@ -1720,17 +1720,17 @@ input:focus-visible {
   place-items: center;
 }
 
-.product-empty-icon svg {
+.product-icon svg {
   width: 20px;
 }
 
-.product-empty-card p,
-.product-empty-card h2,
-.product-empty-card > span {
+.product-card p,
+.product-card h2,
+.product-card > span {
   margin: 0;
 }
 
-.product-empty-card p {
+.product-card p {
   margin-bottom: 8px;
   color: var(--muted);
   font-family: var(--font-geist-mono), monospace;
@@ -1738,32 +1738,38 @@ input:focus-visible {
   letter-spacing: 0.12em;
 }
 
-.product-empty-card h2 {
+.product-card h2 {
   margin-bottom: 8px;
   font-size: 24px;
   letter-spacing: -0.025em;
 }
 
-.product-empty-card > span {
+.product-card > span {
   display: block;
   color: var(--muted);
 }
 
-.product-empty-card a {
+.product-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.product-card-actions a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 24px;
   font-size: 13px;
   font-weight: 550;
 }
 
-.product-empty-card a:hover {
+.product-card-actions a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-.product-empty-card a svg {
+.product-card-actions a svg {
   width: 15px;
 }
 

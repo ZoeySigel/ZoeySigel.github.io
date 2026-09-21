@@ -1,4 +1,4 @@
-import { ArrowLeft, PackageOpen } from "lucide-react";
+import { ArrowLeft, ExternalLink, Feather } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -17,18 +17,23 @@ export default function ProductsPage() {
         <span>正在做的东西。</span>
       </header>
 
-      <section className="product-empty-state" aria-labelledby="product-status">
-        <div className="product-empty-card">
-          <div className="product-empty-icon" aria-hidden="true">
-            <PackageOpen />
+      <section className="product-showcase" aria-labelledby="product-title">
+        <article className="product-card">
+          <div className="product-icon" aria-hidden="true">
+            <Feather />
           </div>
-          <p>PRODUCT SHELF / 00</p>
-          <h2 id="product-status">产品正在整理中</h2>
-          <span>可公开展示的产品完成后会出现在这里。</span>
-          <Link href="/">
-            <ArrowLeft aria-hidden="true" /> 返回主页
-          </Link>
-        </div>
+          <p>PRODUCT SHELF / 01</p>
+          <h2 id="product-title">Owl</h2>
+          <span>owl-et.me</span>
+          <div className="product-card-actions">
+            <a href="https://owl-et.me/" target="_blank" rel="noreferrer">
+              访问产品 <ExternalLink aria-hidden="true" />
+            </a>
+            <Link href="/">
+              <ArrowLeft aria-hidden="true" /> 返回主页
+            </Link>
+          </div>
+        </article>
       </section>
     </main>
   );
