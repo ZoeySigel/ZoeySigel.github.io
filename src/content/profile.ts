@@ -49,7 +49,7 @@ export const USER = {
   ],
   bio: "我是一名湖南大学在读学生，正在寻找全栈/AI应用开发实习机会",
   about: [
-    "熟悉使用React、Vue及相关生态，熟悉使用Next.js进行开发",
+    "熟悉使用React、Vue3进行前端开发，熟悉使用Next.js进行开发",
     "熟悉使用Go进行后端开发，掌握并发编程、服务间通信、缓存、消息队列及分布式系统基础",
   ],
   githubUrl: "https://github.com/ZoeySigel",
