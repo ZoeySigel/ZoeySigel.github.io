@@ -59,8 +59,7 @@ export const USER = {
 export const PROJECTS: Project[] = [
   {
     title: "代表项目名称",
-    summary:
-      "说明项目服务的对象、你负责的核心部分，以及最终带来的可验证结果。当前为占位项目。",
+    summary: "当前为占位项目。",
     href: "#contact",
     period: "项目年份 · 待补充",
     stack: ["TypeScript", "Next.js", "数据层待补充"],
