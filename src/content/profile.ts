@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
     title: "代表项目名称",
     summary: "当前为占位项目。",
     href: "#contact",
-    period: "项目年份 · 待补充",
+    period: "项目年份",
     stack: ["TypeScript", "Next.js", "数据层待补充"],
     defaultOpen: true,
     icon: "01",
