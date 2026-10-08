@@ -69,8 +69,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "开源或个人项目",
-    summary:
-      "介绍你为什么做这个项目、最难的技术问题是什么，以及访问源码或演示的方式。当前为占位项目。",
+    summary: "介绍你为什么做这个项目、最难的技术问题是什么",
     href: "#contact",
     period: "项目年份 · 待补充",
     stack: ["React", "Node.js", "部署方案待补充"],
