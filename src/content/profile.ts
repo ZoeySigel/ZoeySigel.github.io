@@ -62,7 +62,7 @@ export const PROJECTS: Project[] = [
     summary: "描述。",
     href: "#contact",
     period: "项目年份",
-    stack: ["TypeScript", "Next.js", "数据层待补充"],
+    stack: ["TypeScript", "Next.js", "MySQL"],
     defaultOpen: true,
     icon: "01",
     placeholder: true,
