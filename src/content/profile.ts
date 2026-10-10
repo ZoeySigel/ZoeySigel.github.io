@@ -78,8 +78,7 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "一次技术改造",
-    summary:
-      "用问题、行动、结果的顺序描述一次性能、架构或体验改造。当前为占位项目。",
+    summary: "用问题、行动、结果的顺序描述一次性能、架构或体验改造。",
     href: "#contact",
     period: "项目年份 · 待补充",
     stack: ["性能优化", "工程化", "可观测性"],
