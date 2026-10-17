@@ -140,7 +140,7 @@ export const OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
     name: "radar",
     summary: "面向Kubernetes的开源界面，聚合拓扑、事件时间线与服务流量。",
     detail:
-      "修复 Kubernetes CAPI 资源 API Group 模糊匹配导致的第三方 CRD 错误渲染问题",
+      "修复 Kubernetes CAPI资源API Group模糊匹配导致的第三方CRD错误渲染问题",
     href: "https://github.com/skyhook-io/radar",
     icon: "radar",
   },
