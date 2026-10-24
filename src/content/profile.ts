@@ -130,7 +130,7 @@ export const OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
   {
     owner: "vitest-dev",
     name: "vitest",
-    summary: "由 Vite 驱动的下一代测试框架。",
+    summary: "由Vite驱动的下一代测试框架。",
     detail: "修复公共TypeScript类型声明的依赖泄漏与Browser API类型导出问题",
     href: "https://github.com/vitest-dev/vitest",
     icon: "vitest",
