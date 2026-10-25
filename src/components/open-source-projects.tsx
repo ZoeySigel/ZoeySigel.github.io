@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, ExternalLink } from "lucide-react";
+import { ChevronDown, Database, ExternalLink } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
 import { siVitest } from "simple-icons";
@@ -8,6 +8,10 @@ import { siVitest } from "simple-icons";
 import type { OpenSourceProject } from "@/content/profile";
 
 function ProjectMark({ project }: { project: OpenSourceProject }) {
+  if (project.icon === "opendal") {
+    return <Database aria-hidden="true" />;
+  }
+
   if (project.icon === "vitest") {
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -88,6 +92,17 @@ function OpenSourceItem({
             <div>
               <span>PATCH NOTE</span>
               <p>{project.detail}</p>
+              {project.contributionUrl ? (
+                <a
+                  className="open-source-contribution"
+                  href={project.contributionUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`查看 ${project.owner}/${project.name} 的贡献 Pull Request`}
+                >
+                  查看 Pull Request <ExternalLink aria-hidden="true" />
+                </a>
+              ) : null}
             </div>
           </motion.div>
         ) : null}

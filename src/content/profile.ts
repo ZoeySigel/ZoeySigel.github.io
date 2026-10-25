@@ -33,7 +33,8 @@ export type OpenSourceProject = {
   summary: string;
   detail: string;
   href: string;
-  icon: "vitest" | "radar";
+  contributionUrl?: string;
+  icon: "vitest" | "radar" | "opendal";
 };
 
 export const USER = {
@@ -127,6 +128,16 @@ export const TECH_STACK = [
 ] as const;
 
 export const OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
+  {
+    owner: "apache",
+    name: "opendal",
+    summary: "Apache OpenDAL：统一访问多种存储服务的数据访问层。",
+    detail:
+      "完善 Foyer 缓存层的范围读取文档，说明缓存未命中时的整对象读取行为、延迟与内存开销，以及通过大小限制避免大对象缓存的方法。",
+    href: "https://github.com/apache/opendal",
+    contributionUrl: "https://github.com/apache/opendal/pull/8373",
+    icon: "opendal",
+  },
   {
     owner: "vitest-dev",
     name: "vitest",

@@ -1563,6 +1563,21 @@ input:focus-visible {
   line-height: 1.7;
 }
 
+.open-source-contribution {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.open-source-contribution svg {
+  width: 14px;
+  height: 14px;
+}
+
 .social-grid svg {
   width: 16px;
 }
