@@ -27,10 +27,19 @@ pnpm build
 `pnpm build` 会把完整静态站点写入 `out/`。构建后可运行 `pnpm preview` 检查与
 GitHub Pages 接近的静态托管效果。
 
+## 加载性能
+
+中文使用系统字体，避免首屏下载大体积的中文网络字体；英文仍使用 Geist，
+封面与拉绳提示保留像素、手写字体。自定义鼠标与拉绳效果在页面加载完成、
+浏览器空闲时按设备能力加载，手机不加载隐藏的拉绳组件。
+`package.json` 的 `pullcord>motion` override 让拉绳与站点共用同一版动画库，
+升级依赖时需验证拉动切换主题、封面动画和折叠面板。
+
 ## 替换个人内容
 
 - `src/content/profile.ts`：姓名、简介、经历、项目、技术栈和社交链接。
-- `public/avatar.jpg`：个人头像。
+- `public/avatar.webp`：页面使用的头像（320 × 320，兼顾 2 倍屏）；
+  `public/avatar.jpg` 保留原图，替换头像时请同步生成 WebP。
 - `public/og-image.svg`：分享卡片。
 - `src/app/layout.tsx` 与 `src/app/manifest.ts`：站点级 SEO 和应用信息。
 

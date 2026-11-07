@@ -133,8 +133,8 @@ export function SmoothCursor() {
     <motion.div
       className="smooth-cursor"
       style={{
-        left: springX,
-        top: springY,
+        x: springX,
+        y: springY,
         rotate: springRotation,
         scale: springScale,
       }}

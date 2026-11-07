@@ -1,6 +1,5 @@
-import "@fontsource-variable/noto-sans-sc";
 import "@fontsource-variable/pixelify-sans";
-import "@fontsource/caveat/600.css";
+import "@fontsource/caveat/latin-600.css";
 import "pullcord/pullcord.css";
 import "@/styles/globals.css";
 
@@ -8,11 +7,10 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata, Viewport } from "next";
 
-import { PullCordTheme } from "@/components/pull-cord-theme";
+import { DeferredEffects } from "@/components/deferred-effects";
 import { ScrollTop } from "@/components/scroll-top";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { SmoothCursor } from "@/components/smooth-cursor";
 import { ThemeProvider } from "@/components/theme-provider";
 import { USER } from "@/content/profile";
 
@@ -72,8 +70,7 @@ export default function RootLayout({
           <SiteHeader />
           {children}
           <SiteFooter />
-          <PullCordTheme />
-          <SmoothCursor />
+          <DeferredEffects />
           <ScrollTop />
         </ThemeProvider>
       </body>

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  --font-cjk: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC";
   --background: #fafafa;
   --surface: #ffffff;
   --surface-2: #f4f4f5;
@@ -49,8 +50,7 @@ body {
   background:
     linear-gradient(var(--edge) 1px, transparent 1px) 0 7px / 100% 256px,
     var(--background);
-  font-family:
-    var(--font-geist-sans), "Noto Sans SC Variable", system-ui, sans-serif;
+  font-family: var(--font-geist-sans), var(--font-cjk), system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
@@ -837,7 +837,7 @@ input:focus-visible {
 .github-contributions {
   padding: 8px 0;
   border-bottom: 1px solid var(--edge);
-  font-family: var(--font-geist-sans), "Noto Sans SC Variable", sans-serif;
+  font-family: var(--font-geist-sans), var(--font-cjk), sans-serif;
   font-size: 14px;
 }
 
@@ -1143,7 +1143,7 @@ input:focus-visible {
   margin: 0;
   padding-left: 18px;
   color: var(--muted);
-  font-family: var(--font-geist-mono), "Noto Sans SC Variable", monospace;
+  font-family: var(--font-geist-mono), var(--font-cjk), monospace;
   font-size: 13px;
   line-height: 1.7;
 }
@@ -1855,7 +1855,7 @@ input:focus-visible {
 .article-meta,
 .blog-endnote {
   color: var(--muted);
-  font-family: var(--font-geist-mono), "Noto Sans SC Variable", monospace;
+  font-family: var(--font-geist-mono), var(--font-cjk), monospace;
   font-size: 11px;
 }
 
@@ -2173,7 +2173,7 @@ html[data-custom-cursor="true"] * {
   pointer-events: none;
   transform-origin: 50% 50%;
   translate: -50% -50%;
-  will-change: left, top, transform;
+  will-change: transform;
 }
 
 .smooth-cursor svg {
