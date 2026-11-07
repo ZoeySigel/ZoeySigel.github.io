@@ -1821,6 +1821,270 @@ input:focus-visible {
   color: var(--background);
 }
 
+/* Blog: dated notes within the existing portfolio frame. */
+.blog-intro h1 > span {
+  color: var(--accent);
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-list li + li {
+  border-top: 1px solid var(--edge);
+}
+
+.post-entry {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) 20px;
+  align-items: start;
+  gap: 24px;
+  padding: 30px 28px;
+  transition: background-color 180ms ease;
+}
+
+.post-entry:hover,
+.post-entry:focus-visible {
+  background: var(--surface-2);
+}
+
+.post-meta,
+.post-tags,
+.article-meta,
+.blog-endnote {
+  color: var(--muted);
+  font-family: var(--font-geist-mono), "Noto Sans SC Variable", monospace;
+  font-size: 11px;
+}
+
+.post-meta {
+  display: grid;
+  gap: 5px;
+  padding-top: 3px;
+}
+
+.post-meta time {
+  color: var(--foreground);
+}
+
+.post-tags {
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+
+.post-copy h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+}
+
+.post-copy p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.post-arrow {
+  width: 18px;
+  margin-top: 3px;
+  color: var(--muted);
+  transition: transform 180ms ease;
+}
+
+.post-entry:hover .post-arrow {
+  color: var(--foreground);
+  transform: translate(2px, -2px);
+}
+
+.latest-posts-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.latest-posts-heading > a:hover {
+  color: var(--foreground);
+}
+
+.latest-posts-heading > a svg {
+  width: 14px;
+}
+
+.latest-posts .post-list {
+  border-top: 1px solid var(--edge);
+}
+
+.latest-posts .post-entry {
+  padding: 24px 16px;
+  gap: 18px;
+}
+
+.blog-endnote {
+  margin: 0;
+  padding: 24px 28px;
+  border-top: 1px dashed var(--edge-strong);
+}
+
+.article-header {
+  padding: 40px 40px 28px;
+  border-bottom: 1px solid var(--edge);
+  background-image: radial-gradient(var(--pattern) 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+.blog-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.blog-back:hover {
+  color: var(--foreground);
+}
+
+.blog-back svg,
+.article-next svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.article-header > .post-tags {
+  margin-top: 36px;
+}
+
+.article-header h1 {
+  margin: 0 0 16px;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
+.article-header > p {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.article-body {
+  padding: 28px 40px 48px;
+  font-size: 15px;
+  line-height: 1.95;
+  overflow-wrap: anywhere;
+}
+
+.article-body p {
+  margin: 0 0 22px;
+}
+
+.article-body .article-lead {
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.article-body h2 {
+  margin: 36px 0 16px;
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+}
+
+.article-body blockquote {
+  margin: 28px 0;
+  padding: 12px 20px;
+  border-left: 2px solid var(--accent);
+  background: var(--surface-2);
+}
+
+.article-body pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 20px;
+  border: 1px solid var(--edge);
+  background: var(--surface-2);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.article-body ul {
+  padding-left: 22px;
+}
+
+.article-body li + li {
+  margin-top: 8px;
+}
+
+.article-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 40px;
+  border-top: 1px solid var(--edge);
+}
+
+.article-next small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.article-next span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .post-entry,
+  .latest-posts .post-entry {
+    grid-template-columns: minmax(0, 1fr) 18px;
+    gap: 12px;
+    padding: 22px 18px;
+  }
+
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    grid-column: 1 / -1;
+    gap: 14px;
+    padding: 0;
+  }
+
+  .post-copy h2 {
+    font-size: 18px;
+  }
+
+  .article-header,
+  .article-body,
+  .article-footer {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .article-next {
+    width: 100%;
+  }
+}
+
 /* Footer and utilities */
 .site-footer {
   padding: 0 0 28px;

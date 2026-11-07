@@ -1,10 +1,12 @@
 import { ArrowUpRight, Github, Mail, MapPin, Radio } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { FlipSentences } from "@/components/flip-sentences";
 import { GitHubContributions } from "@/components/github-contributions";
 import { OpenSourceProjects } from "@/components/open-source-projects";
+import { PostList } from "@/components/post-list";
 import { ProfileCover } from "@/components/profile-cover";
 import { TechStackGrid } from "@/components/tech-stack-grid";
 import { VerifiedBadge } from "@/components/verified-badge";
@@ -15,6 +17,7 @@ import {
   TECH_STACK,
   USER,
 } from "@/content/profile";
+import { getPosts } from "@/lib/posts";
 
 function Separator() {
   return <div className="stripe-separator" aria-hidden="true" />;
@@ -141,6 +144,23 @@ export default function HomePage() {
           <div id="open-source-title">
             <OpenSourceProjects projects={OPEN_SOURCE_PROJECTS} />
           </div>
+        </section>
+
+        <Separator />
+
+        <section
+          className="content-panel latest-posts"
+          id="blog"
+          aria-labelledby="latest-posts-title"
+        >
+          <header className="panel-heading latest-posts-heading">
+            <p>LATEST WRITING</p>
+            <h2 id="latest-posts-title">最新文章</h2>
+            <Link href="/blog/">
+              全部文章 <ArrowUpRight aria-hidden="true" />
+            </Link>
+          </header>
+          <PostList posts={getPosts().slice(0, 2)} />
         </section>
 
         <Separator />

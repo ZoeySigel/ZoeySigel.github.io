@@ -42,6 +42,17 @@ GitHub Pages 接近的静态托管效果。
 产品页面位于 `src/app/products/page.tsx`。获得可公开展示的产品资料后，可将当前空状态
 替换为产品卡片；图片请保存到 `public/`，不要依赖运行时图片优化或服务器接口。
 
+## 添加博客文章
+
+博客列表位于 `/blog/`，文章详情位于 `/blog/[slug]/`。
+在 `src/content/posts.tsx` 的 `POSTS` 数组中添加文章，填写稳定且唯一的 `slug`、
+标题、摘要、日期（`YYYY-MM-DD`）、预计阅读分钟数、标签和 JSX 正文即可。
+当前两篇标记为“示例文章”的内容可直接替换。
+
+`src/lib/posts.ts` 统一按日期倒序排列文章，首页开源参与下方自动显示最新两篇。
+所有详情页和站点地图均在构建时生成，无需服务器或数据库。
+添加文章后运行上述检查并推送到 `main`，GitHub Actions 会自动发布。
+
 ## GitHub Pages 部署
 
 1. 在 GitHub 创建公开仓库 `ZoeySigel/ZoeySigel.github.io`。

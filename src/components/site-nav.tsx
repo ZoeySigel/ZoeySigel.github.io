@@ -6,6 +6,12 @@ import { usePathname } from "next/navigation";
 const NAV_ITEMS = [
   { href: "/", label: "主页", matches: (pathname: string) => pathname === "/" },
   {
+    href: "/blog/",
+    label: "Blog",
+    matches: (pathname: string) =>
+      pathname === "/blog" || pathname.startsWith("/blog/"),
+  },
+  {
     href: "/products/",
     label: "产品",
     matches: (pathname: string) =>

@@ -9,6 +9,7 @@ import { ZSMark } from "@/components/zs-mark";
 export function SiteHeader() {
   const commandItems = [
     { label: "首页", detail: "个人主页", href: "/" },
+    { label: "Blog", detail: "文章与笔记", href: "/blog/" },
     { label: "产品", detail: "产品与实验", href: "/products/" },
     { label: "经历", detail: "工作与教育", href: "/#experience" },
     { label: "技术栈", detail: "常用工具", href: "/#stack" },
