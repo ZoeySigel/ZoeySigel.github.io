@@ -1,4 +1,14 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import type { ReactNode } from "react";
+
+import { ArticleMarkdown } from "@/components/article-markdown";
+
+const aiCodingArticle = readFileSync(
+  join(process.cwd(), "src/content/posts/ai-coding-engineering.md"),
+  "utf8"
+);
 
 export type Post = {
   slug: string;
@@ -10,42 +20,20 @@ export type Post = {
   content: ReactNode;
 };
 
-// 示例内容，可直接替换。slug 是文章的永久链接，发布后应保持稳定。
+// slug 是文章的永久链接，发布后应保持稳定。
 export const POSTS: Post[] = [
   {
     slug: "a-place-for-notes",
-    title: "给想法留一个地方",
-    description: "从一条笔记到一篇文章，让项目之外的思考也有迹可循。",
-    date: "2026-11-07",
-    readingMinutes: 2,
-    tags: ["随笔", "示例文章"],
+    title: aiCodingArticle.split(/\r?\n/)[0].replace(/^# /, ""),
+    description:
+      "关于上下文工程、Spec 驱动开发、Agent Harness、测试验证与人机协作的系统整理。",
+    date: "2026-11-08",
+    readingMinutes: 22,
+    tags: ["AI Coding", "工程实践"],
     content: (
-      <>
-        <p className="article-lead">
-          项目展示结果，文章记录过程。这里先用一篇示例，试试这个博客的阅读体验。
-        </p>
-        <h2>那些没有写进项目介绍的事</h2>
-        <p>
-          一个项目的介绍通常很短，几句话说清楚做了什么，再放一个链接。但在实现的过程中，还有很多细节值得留下。为什么选择这个方案，某个交互调整了几次，以及一个不起眼的问题是怎样被找到的。
-        </p>
-        <p>
-          这些内容不一定适合放在首页。单独写下来，就能给每一个问题留出足够的空间，也方便以后回头查找。
-        </p>
-        <h2>先从一个小问题开始</h2>
-        <p>
-          第一篇文章不需要覆盖整个项目。选一个具体的问题，把背景、尝试和结果写清楚，就已经是一份有用的记录。
-        </p>
-        <blockquote>
-          如果未来的自己遇到同一个问题，这篇文章能不能帮忙少走一步？
-        </blockquote>
-        <p>
-          可以用这个问题检查草稿。如果答案还不明确，就补上缺少的上下文，或者把范围再缩小一点。
-        </p>
-        <h2>下一篇，留给真实的记录</h2>
-        <p>
-          这个博客会放下技术笔记、项目记录和一些零散想法。当前两篇是用于测试列表、首页推荐和详情页的示例内容，后续可以直接替换成正式文章。
-        </p>
-      </>
+      <ArticleMarkdown
+        source={aiCodingArticle.replace(/^# [^\r\n]+\r?\n/, "").trim()}
+      />
     ),
   },
   {

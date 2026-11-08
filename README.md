@@ -56,7 +56,9 @@ GitHub Pages 接近的静态托管效果。
 博客列表位于 `/blog/`，文章详情位于 `/blog/[slug]/`。
 在 `src/content/posts.tsx` 的 `POSTS` 数组中添加文章，填写稳定且唯一的 `slug`、
 标题、摘要、日期（`YYYY-MM-DD`）、预计阅读分钟数、标签和 JSX 正文即可。
-当前两篇标记为“示例文章”的内容可直接替换。
+当前第一篇正式文章保存在 `src/content/posts/ai-coding-engineering.md`，
+通过 `ArticleMarkdown` 在构建期渲染，支持表格、引用、列表和行内代码。
+修改该 Markdown 文件即可更新正文；第二篇标记为“示例文章”的内容可直接替换。
 
 `src/lib/posts.ts` 统一按日期倒序排列文章，首页开源参与下方自动显示最新两篇。
 所有详情页和站点地图均在构建时生成，无需服务器或数据库。
