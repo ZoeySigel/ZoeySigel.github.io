@@ -43,7 +43,14 @@ GitHub Pages 接近的静态托管效果。
 - `public/og-image.svg`：分享卡片。
 - `src/app/layout.tsx` 与 `src/app/manifest.ts`：站点级 SEO 和应用信息。
 
-仓库仅在构建期读取 GitHub 的公开贡献记录，不读取私人资料。替换占位邮箱时，同时检查
+仓库仅在构建期读取 GitHub 的公开贡献记录，不读取私人资料。请求最多尝试三次，
+每次限时 10 秒，失败原因记录到构建日志。成功结果写入 `.cache/github-contributions`，
+由 GitHub Actions 缓存供后续构建恢复；全新构建也可以使用
+`src/content/github-contributions` 中的真实数据快照。只有校验完整的日历才会更新缓存。
+请求失败时选择最新有效快照，并在页面标注同步日期。
+可运行 `pnpm test:contributions` 验证重试、缓存和异常恢复。
+
+替换占位邮箱时，同时检查
 页面中是否仍有“待替换”标签。
 
 ## 添加产品

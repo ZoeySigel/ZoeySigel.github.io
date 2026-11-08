@@ -19,6 +19,7 @@
     "preview": "serve out -l 1408",
     "lint": "eslint .",
     "check-types": "tsc --noEmit --pretty",
+    "test:contributions": "node --experimental-strip-types --test tests/github-contributions.test.mjs",
     "format:check": "prettier --check \"**/*.{ts,tsx,md,json}\" --cache",
     "format:write": "prettier --write \"**/*.{ts,tsx,md,json}\" --cache"
   },

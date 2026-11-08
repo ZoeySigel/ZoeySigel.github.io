@@ -50,8 +50,27 @@ jobs:
       - name: Check types
         run: pnpm check-types
 
+      - name: Restore contribution snapshot
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/github-contributions
+          key: contributions-${{ runner.os }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            contributions-${{ runner.os }}-${{ github.ref_name }}-
+            contributions-${{ runner.os }}-main-
+
+      - name: Test contribution recovery
+        run: pnpm test:contributions
+
       - name: Build static site
         run: pnpm build
+
+      - name: Save contribution snapshot
+        if: github.event_name != 'pull_request'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/github-contributions
+          key: contributions-${{ runner.os }}-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

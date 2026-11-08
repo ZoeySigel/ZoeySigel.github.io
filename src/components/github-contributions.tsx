@@ -70,6 +70,7 @@ export async function GitHubContributions({
   return (
     <section
       className="github-contributions"
+      data-source={contributions.source}
       aria-labelledby="github-contributions-title"
     >
       <h2 className="visually-hidden" id="github-contributions-title">
@@ -136,6 +137,12 @@ export async function GitHubContributions({
               <span>More</span>
             </div>
           </div>
+          {contributions.source === "cache" && contributions.fetchedAt && (
+            <p className="contribution-unavailable">
+              显示最近一次成功同步的数据（
+              {contributions.fetchedAt.slice(0, 10).replaceAll("-", ".")}）。
+            </p>
+          )}
         </>
       ) : (
         <p className="contribution-unavailable">
