@@ -10,7 +10,7 @@ export function RandomQuestionButton({ urls }: { urls: string[] }) {
       disabled={urls.length === 0}
       onClick={() => {
         const url = urls[Math.floor(Math.random() * urls.length)];
-        if (url) window.location.assign(url);
+        if (url) window.open(url, "_blank", "noopener,noreferrer");
       }}
     >
       <Shuffle aria-hidden="true" />

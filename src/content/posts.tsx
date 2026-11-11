@@ -60,7 +60,7 @@ export const POSTS: Post[] = [
     content: (
       <>
         <RandomQuestionButton urls={questionUrls} />
-        <ArticleMarkdown source={algorithmArticle} />
+        <ArticleMarkdown source={algorithmArticle} newTabLinks />
       </>
     ),
   },
