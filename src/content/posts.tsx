@@ -37,7 +37,7 @@ export const POSTS: Post[] = [
     ),
   },
   {
-    slug: "keeping-a-static-blog-simple",
+    slug: "algorithm-learning",
     title: "算法学习",
     description: "",
     date: "2026-11-11",
