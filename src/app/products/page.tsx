@@ -14,7 +14,6 @@ export default function ProductsPage() {
       <header className="page-intro">
         <p>PRODUCT LOG</p>
         <h1>产品</h1>
-        <span>正在做的东西。</span>
       </header>
 
       <section className="product-showcase" aria-labelledby="product-title">

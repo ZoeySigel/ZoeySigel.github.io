@@ -5,7 +5,6 @@ import { getPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "技术笔记、项目记录，还有一些零散想法。",
   alternates: { canonical: "/blog/" },
 };
 
@@ -19,10 +18,8 @@ export default function BlogPage() {
         <h1>
           Blog<span aria-hidden="true">_</span>
         </h1>
-        <span>技术笔记、项目记录，还有一些零散想法。</span>
       </header>
       <PostList posts={posts} />
-      <p className="blog-endnote">记录一点，积累一点。</p>
     </main>
   );
 }
