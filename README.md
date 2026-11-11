@@ -68,6 +68,13 @@ GitHub Pages 接近的静态托管效果。
 修改该 Markdown 文件即可更新正文；《算法学习》的正文保存在
 `src/content/posts/algorithm-learning.md`，仅包含分类和题目链接。
 
+### 算法题笔记
+
+每道题旁边的“笔记”可展开对应内容。在 IDE 中编辑
+`src/content/algorithm-notes/<题号>.md` 即可，例如 `1.md` 对应“两数之和”。
+已为当前 100 道题创建空白文件，可直接写文字，也支持 Markdown 列表、链接和代码块。
+本地运行 `pnpm dev`，保存笔记后刷新文章页面预览；提交推送后，笔记会随站点构建公开发布。
+
 `src/lib/posts.ts` 统一按日期倒序排列文章，首页开源参与下方自动显示最新两篇。
 所有详情页和站点地图均在构建时生成，无需服务器或数据库。
 添加文章后运行上述检查并推送到 `main`，GitHub Actions 会自动发布。

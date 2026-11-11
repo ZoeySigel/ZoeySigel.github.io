@@ -7,24 +7,44 @@ import remarkGfm from "remark-gfm";
 export function ArticleMarkdown({
   source,
   newTabLinks = false,
+  questionNotes,
 }: {
   source: string;
   newTabLinks?: boolean;
+  questionNotes?: Record<string, { id: string; source: string }>;
 }) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
-        a: ({ href, title, children }) => (
-          <a
-            href={href}
-            title={title}
-            target={newTabLinks ? "_blank" : undefined}
-            rel={newTabLinks ? "noopener noreferrer" : undefined}
-          >
-            {children}
-          </a>
-        ),
+        a: ({ href, title, children }) => {
+          const link = (
+            <a
+              href={href}
+              title={title}
+              target={newTabLinks ? "_blank" : undefined}
+              rel={newTabLinks ? "noopener noreferrer" : undefined}
+            >
+              {children}
+            </a>
+          );
+          const note = href ? questionNotes?.[href] : undefined;
+          if (!note) return link;
+          return (
+            <div className="algorithm-question">
+              <div className="algorithm-question-link">{link}</div>
+              <details className="question-note">
+                <summary aria-label={`第 ${note.id} 题笔记`}>笔记</summary>
+                <div className="question-note-content">
+                  <ArticleMarkdown
+                    source={note.source}
+                    newTabLinks={newTabLinks}
+                  />
+                </div>
+              </details>
+            </div>
+          );
+        },
         table: ({ children }) => (
           <div
             className="article-table"

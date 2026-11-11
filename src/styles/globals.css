@@ -2018,6 +2018,45 @@ input:focus-visible {
   height: 16px;
 }
 
+.algorithm-question {
+  position: relative;
+}
+
+.algorithm-question-link {
+  padding-right: 72px;
+}
+
+.question-note > summary {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.question-note[open] > summary {
+  color: var(--foreground);
+}
+
+.question-note > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.question-note-content {
+  min-height: 54px;
+  margin-top: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--edge);
+  background: var(--surface-2);
+  font-size: 14px;
+}
+
+.question-note-content > :last-child {
+  margin-bottom: 0;
+}
+
 .article-body .article-lead {
   color: var(--muted);
   font-size: 17px;
