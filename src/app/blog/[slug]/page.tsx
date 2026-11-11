@@ -46,13 +46,15 @@ export default async function PostPage({ params }: Props) {
           <Link className="blog-back" href="/blog/">
             <ArrowLeft aria-hidden="true" /> 全部文章
           </Link>
-          <div className="post-tags">{post.tags.join(" / ")}</div>
+          {post.tags.length > 0 && (
+            <div className="post-tags">{post.tags.join(" / ")}</div>
+          )}
           <h1>{post.title}</h1>
-          <p>{post.description}</p>
+          {post.description && <p>{post.description}</p>}
           <div className="article-meta">
             <span>{USER.name}</span>
             <time dateTime={post.date}>{formatPostDate(post.date)}</time>
-            <span>{post.readingMinutes} 分钟阅读</span>
+            {post.readingMinutes && <span>{post.readingMinutes} 分钟阅读</span>}
           </div>
         </header>
         <div className="article-body">{post.content}</div>

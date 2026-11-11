@@ -12,12 +12,16 @@ export function PostList({ posts }: { posts: Post[] }) {
           <Link className="post-entry" href={`/blog/${post.slug}/`}>
             <div className="post-meta">
               <time dateTime={post.date}>{formatPostDate(post.date)}</time>
-              <span>{post.readingMinutes} 分钟阅读</span>
+              {post.readingMinutes && (
+                <span>{post.readingMinutes} 分钟阅读</span>
+              )}
             </div>
             <div className="post-copy">
-              <div className="post-tags">{post.tags.join(" / ")}</div>
+              {post.tags.length > 0 && (
+                <div className="post-tags">{post.tags.join(" / ")}</div>
+              )}
               <h2>{post.title}</h2>
-              <p>{post.description}</p>
+              {post.description && <p>{post.description}</p>}
             </div>
             <ArrowUpRight className="post-arrow" aria-hidden="true" />
           </Link>

@@ -65,7 +65,8 @@ GitHub Pages 接近的静态托管效果。
 标题、摘要、日期（`YYYY-MM-DD`）、预计阅读分钟数、标签和 JSX 正文即可。
 当前第一篇正式文章保存在 `src/content/posts/ai-coding-engineering.md`，
 通过 `ArticleMarkdown` 在构建期渲染，支持表格、引用、列表和行内代码。
-修改该 Markdown 文件即可更新正文；第二篇标记为“示例文章”的内容可直接替换。
+修改该 Markdown 文件即可更新正文；《算法学习》的正文保存在
+`src/content/posts/algorithm-learning.md`，仅包含分类和题目链接。
 
 `src/lib/posts.ts` 统一按日期倒序排列文章，首页开源参与下方自动显示最新两篇。
 所有详情页和站点地图均在构建时生成，无需服务器或数据库。
