@@ -2023,16 +2023,36 @@ input:focus-visible {
 }
 
 .algorithm-question-link {
-  padding-right: 72px;
+  padding-right: 40px;
 }
 
 .question-note > summary {
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
   color: var(--muted);
   font-size: 12px;
+  list-style: none;
   cursor: pointer;
+}
+
+.question-note > summary::-webkit-details-marker {
+  display: none;
+}
+
+.question-note > summary svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 160ms ease;
+}
+
+.question-note[open] > summary svg {
+  transform: rotate(90deg);
 }
 
 .question-note[open] > summary {

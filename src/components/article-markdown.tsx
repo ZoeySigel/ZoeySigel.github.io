@@ -1,5 +1,6 @@
 import "server-only";
 
+import { ChevronRight } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -34,7 +35,9 @@ export function ArticleMarkdown({
             <div className="algorithm-question">
               <div className="algorithm-question-link">{link}</div>
               <details className="question-note">
-                <summary aria-label={`第 ${note.id} 题笔记`}>笔记</summary>
+                <summary aria-label={`第 ${note.id} 题笔记`}>
+                  <ChevronRight aria-hidden="true" />
+                </summary>
                 <div className="question-note-content">
                   <ArticleMarkdown
                     source={note.source}
