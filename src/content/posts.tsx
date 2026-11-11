@@ -4,11 +4,26 @@ import { join } from "node:path";
 import type { ReactNode } from "react";
 
 import { ArticleMarkdown } from "@/components/article-markdown";
+import { RandomQuestionButton } from "@/components/random-question-button";
 
 const aiCodingArticle = readFileSync(
   join(process.cwd(), "src/content/posts/ai-coding-engineering.md"),
   "utf8"
 );
+
+const algorithmArticle = readFileSync(
+  join(process.cwd(), "src/content/posts/algorithm-learning.md"),
+  "utf8"
+);
+const questionUrls = [
+  ...new Set(
+    [
+      ...algorithmArticle.matchAll(
+        /\((https:\/\/leetcode\.cn\/problems\/[a-z0-9-]+\/)\)/g
+      ),
+    ].map((match) => match[1])
+  ),
+];
 
 export type Post = {
   slug: string;
@@ -43,12 +58,10 @@ export const POSTS: Post[] = [
     date: "2026-11-11",
     tags: [],
     content: (
-      <ArticleMarkdown
-        source={readFileSync(
-          join(process.cwd(), "src/content/posts/algorithm-learning.md"),
-          "utf8"
-        )}
-      />
+      <>
+        <RandomQuestionButton urls={questionUrls} />
+        <ArticleMarkdown source={algorithmArticle} />
+      </>
     ),
   },
 ];

@@ -1997,6 +1997,27 @@ input:focus-visible {
   margin: 0 0 22px;
 }
 
+.random-question-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border: 1px solid var(--foreground);
+  background: var(--foreground);
+  color: var(--background);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.random-question-button:hover {
+  opacity: 0.8;
+}
+
+.random-question-button svg {
+  width: 16px;
+  height: 16px;
+}
+
 .article-body .article-lead {
   color: var(--muted);
   font-size: 17px;
